@@ -2,6 +2,7 @@ package com.avocado.boot.starter.core.exception;
 
 import cn.hutool.core.collection.CollUtil;
 import com.avocado.boot.starter.core.enums.ErrorType;
+import com.avocado.boot.starter.core.enums.SystemErrorType;
 
 import java.util.Collection;
 import java.util.Map;
@@ -23,6 +24,11 @@ public class BusinessException extends RuntimeException {
   public BusinessException(ErrorType errorType) {
     super(errorType.getMessage());
     this.errorType = errorType;
+  }
+
+  public BusinessException(String message) {
+    super(message);
+    this.errorType = SystemErrorType.CUSTOM_ERROR;
   }
 
   public ErrorType getErrorType() {

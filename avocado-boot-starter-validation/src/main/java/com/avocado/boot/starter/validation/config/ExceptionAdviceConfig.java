@@ -67,7 +67,7 @@ public class ExceptionAdviceConfig {
      */
     @ExceptionHandler(BusinessException.class)
     public ResponseEntity<?> baseException(BusinessException e) {
-        return ResponseEntity.status(e.getErrorType().getCode()).body(e.getErrorType().getMessage());
+        return ResponseEntity.status(e.getErrorType().getCode()).body(e.getMessage());
     }
 
 }
