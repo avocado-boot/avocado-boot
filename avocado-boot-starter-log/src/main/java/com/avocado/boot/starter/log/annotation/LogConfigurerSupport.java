@@ -6,11 +6,7 @@ import com.avocado.boot.starter.log.Logs;
  * @author ：qiaoliang
  * @date ：2020-07-16
  */
-public class LogConfigurerSupport implements LogConfigurer{
-    @Override
-    public void before(Logs logs) {
-
-    }
+public class LogConfigurerSupport implements LogConfigurerAnnotation{
 
     @Override
     public void doAfterReturning(Logs logs) {
@@ -21,4 +17,5 @@ public class LogConfigurerSupport implements LogConfigurer{
     public void doAfterThrowing(Logs logs) {
 
     }
+
 }

@@ -1,6 +1,4 @@
-package com.avocado.boot.starter.log.annotation;
-
-import com.avocado.boot.starter.log.Logs;
+package com.avocado.boot.starter.log;
 
 /**
  * @author ：qiaoliang
