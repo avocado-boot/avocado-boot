@@ -28,7 +28,11 @@
         <!-- mybatis-plus -->
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <!-- mysql-connector -->
-        <mysql.connector.java.version>5.1.47</mysql.connector.java.version>
+        <mysql.connector.java.version>8.0.16</mysql.connector.java.version>
+        <!-- mybatis-plus -->
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <!-- aliyun短信 -->
+        <com.aliyun.core.version>4.1.0</com.aliyun.core.version>
     </properties>
 
     <!-- 依赖管理 -->
@@ -60,16 +64,27 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.connector.java.version}</version>
             </dependency>
+            <!--Mybatis的增强工具包，可简化开发。-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--Mybatis代码生成 Begin-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--阿里短信发送依赖-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${com.aliyun.core.version}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>
-
-    <distributionManagement>
-        <repository>
-            <id>avocado-mvn</id>
-            <url>file:D:/IDEA/IdeaProjects/avocado-boot/repository</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -107,7 +122,20 @@
                     <skipTests>true</skipTests>
                 </configuration>
             </plugin>
+            <!-- maven-enforcer-plugin 这个插件会对项目环境进行检查 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
+
+
+    <distributionManagement>
+        <repository>
+            <id>avocado-maven-repository</id>
+            <url>file:D:/IDEA/IdeaProjects/avocado-boot/repository</url>
+        </repository>
+    </distributionManagement>
 
 </project>
