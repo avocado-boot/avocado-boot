@@ -64,13 +64,6 @@
 
     </dependencyManagement>
 
-    <distributionManagement>
-        <repository>
-            <id>avocado-mvn</id>
-            <url>file:D:/IDEA/IdeaProjects/avocado-boot/repository</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <finalName>${project.artifactId}</finalName>
         <resources>
