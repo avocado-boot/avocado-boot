@@ -1,9 +1,6 @@
 package com.avocado.boot.starter.log.config;
 
-import com.avocado.boot.starter.log.LogConfigurer;
-import com.avocado.boot.starter.log.annotation.LogConfigurerSupport;
 import com.avocado.boot.starter.log.aop.LogAspect;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
@@ -17,10 +14,5 @@ import org.springframework.context.annotation.Import;
 })
 @Import({LogAspect.class})
 public class WebMvcAutoLogConfiguration{
-
-    @Bean
-    public LogConfigurer getLogConfigurerSupport(){
-        return new LogConfigurerSupport();
-    }
 
 }

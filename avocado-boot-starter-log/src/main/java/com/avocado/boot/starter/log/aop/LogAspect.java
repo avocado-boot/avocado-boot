@@ -2,7 +2,6 @@ package com.avocado.boot.starter.log.aop;
 
 import com.avocado.boot.starter.core.exception.BusinessException;
 import com.avocado.boot.starter.log.Logs;
-import com.avocado.boot.starter.log.annotation.LogConfigurerAnnotation;
 import com.avocado.boot.starter.log.annotation.LogConfigurerSupport;
 import com.avocado.boot.starter.log.enums.LogLevelType;
 import com.avocado.boot.starter.log.factory.LogConfigurationAdapter;
@@ -34,7 +33,7 @@ import java.util.Objects;
 @ConditionalOnProperty(prefix = "avocado.log", name = "enabled", havingValue = "true",matchIfMissing = true)
 public class LogAspect {
 
-    private final LogConfigurerAnnotation logConfigurerSupport;
+    private final LogConfigurerSupport logConfigurerSupport;
     private final LogOutput logOutput;
     private Logs logs = null;
 
