@@ -32,6 +32,8 @@
         <com.avocado.boot.redis.version>0.0.1</com.avocado.boot.redis.version>
         <!-- Avocado Boot Validation -->
         <com.avocado.boot.validation.version>0.0.1</com.avocado.boot.validation.version>
+        <!-- Avocado Boot Bus -->
+        <com.avocado.boot.bus.version>0.0.1</com.avocado.boot.bus.version>
     </properties>
 
     <!-- 依赖管理 -->
@@ -69,7 +71,12 @@
                 <artifactId>avocado-boot-starter-validation</artifactId>
                 <version>${com.avocado.boot.validation.version}</version>
             </dependency>
-
+            <!-- Avocado Boot Bus -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-bus</artifactId>
+                <version>${com.avocado.boot.bus.version}</version>
+            </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>
                 <groupId>cn.hutool</groupId>
