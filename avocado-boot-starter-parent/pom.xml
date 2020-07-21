@@ -40,19 +40,114 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <!-- Avocado Boot -->
-        <avocado-boot-dependencies.version>1.0.0</avocado-boot-dependencies.version>
+        <!-- Spring Boot -->
+        <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
+        <!-- Hutool -->
+        <cn.hutool.version>4.6.17</cn.hutool.version>
+        <!-- mybatis-plus -->
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <!-- mysql-connector -->
+        <mysql.connector.java.version>8.0.16</mysql.connector.java.version>
+        <!-- mybatis-plus -->
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <!-- google-guava -->
+        <google-guava.version>24.1.1-jre</google-guava.version>
+        <!-- aliyun短信 -->
+        <com.aliyun.core.version>4.1.0</com.aliyun.core.version>
+        <!-- Avocado Boot Core -->
+        <avocado-boot-core.version>1.0.0</avocado-boot-core.version>
+        <!-- Avocado Boot Log -->
+        <avocado-boot-log.version>1.0.0</avocado-boot-log.version>
+        <!-- Avocado Boot Redis -->
+        <avocado-boot-redis.version>1.0.0</avocado-boot-redis.version>
+        <!-- Avocado Boot Validation -->
+        <avocado-boot-validation.version>1.0.0</avocado-boot-validation.version>
+        <!-- Avocado Boot Bus -->
+        <avocado-boot-bus.version>1.0.0</avocado-boot-bus.version>
     </properties>
 
     <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
+            <!-- Spring Boot -->
             <dependency>
-                <groupId>com.avocado.boot</groupId>
-                <artifactId>avocado-boot-dependencies</artifactId>
-                <version>${avocado-boot-dependencies.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- Avocado Boot Core -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-core</artifactId>
+                <version>${avocado-boot-core.version}</version>
+            </dependency>
+            <!-- Avocado Boot Log -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-log</artifactId>
+                <version>${avocado-boot-log.version}</version>
+            </dependency>
+            <!-- Avocado Boot Redis -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-redis</artifactId>
+                <version>${avocado-boot-redis.version}</version>
+            </dependency>
+            <!-- Avocado Boot Validation -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-validation</artifactId>
+                <version>${avocado-boot-validation.version}</version>
+            </dependency>
+            <!-- Avocado Boot Bus -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-bus</artifactId>
+                <version>${avocado-boot-bus.version}</version>
+            </dependency>
+            <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${cn.hutool.version}</version>
+            </dependency>
+            <!--Mybatis的增强工具包，可简化开发。-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--MySQL的JDBC驱动-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.java.version}</version>
+            </dependency>
+            <!--Mybatis的增强工具包，可简化开发。-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--Mybatis代码生成 Begin-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--阿里短信发送依赖-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${com.aliyun.core.version}</version>
+            </dependency>
+            <!-- Gogle guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google-guava.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
