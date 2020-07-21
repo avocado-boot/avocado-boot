@@ -2,13 +2,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.avocado.boot</groupId>
     <name>avocado-boot-starter-parent</name>
     <artifactId>avocado-boot-starter-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-
+    <url>https://github.com/gitQiao/avocado-boot</url>
+    <organization>
+        <name>Avocado Personal Tailor.</name>
+        <url>https://github.com/gitQiao</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>LiangQiao</name>
+            <email>1224999091@qq.com</email>
+            <organization>Avocado Personal Tailor.</organization>
+            <organizationUrl>https://github.com/gitQiao</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/gitQiao/avocado-boot</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gitQiao/avocado-boot.git</developerConnection>
+        <url>https://github.com/gitQiao/avocado-boot</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/gitQiao/avocado-boot/issues</url>
+    </issueManagement>
     <!-- Jar 版本控制 -->
     <properties>
         <!-- Java版本 -->
@@ -20,8 +40,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <!-- Spring Boot -->
-        <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
         <!-- Avocado Boot -->
         <avocado-boot-dependencies.version>1.0.0</avocado-boot-dependencies.version>
     </properties>
@@ -29,14 +47,6 @@
     <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <dependency>
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-dependencies</artifactId>
@@ -90,10 +100,10 @@
             </plugin>
         </plugins>
     </build>
-    <repositories>
+    <distributionManagement>
         <repository>
-            <id>avocado-maven</id>
-            <url>https://github.com/gitQiao/avocado-boot/tree/master/repository/com/avocado/boot</url>
+            <id>avocado-maven-repository</id>
+            <url>file:../repository</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 </project>
