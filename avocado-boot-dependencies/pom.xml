@@ -7,10 +7,33 @@
     <groupId>com.avocado.boot</groupId>
     <artifactId>avocado-boot-dependencies</artifactId>
     <version>1.0.0</version>
-
     <name>avocado-boot-dependencies</name>
     <packaging>pom</packaging>
-
+    <url>https://github.com/gitQiao/avocado-boot</url>
+    <!--项目开发者所属组织 -->
+    <organization>
+        <name>Avocado Software, Inc.</name>
+        <url>https://github.com/gitQiao</url>
+    </organization>
+    <!--项目开发者列表 -->
+    <developers>
+        <developer>
+            <name>LiangQiao</name>
+            <email>1224999091@qq.com</email>
+            <organization>Avocado Software, Inc.</organization>
+            <organizationUrl>https://github.com/gitQiao</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/gitQiao/avocado-boot</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gitQiao/avocado-boot.git</developerConnection>
+        <url>https://github.com/gitQiao/avocado-boot</url>
+    </scm>
+    <!-- 项目的问题管理系统 -->
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/gitQiao/avocado-boot/issues</url>
+    </issueManagement>
     <!-- Jar 版本控制 -->
     <properties>
         <!-- Hutool -->
