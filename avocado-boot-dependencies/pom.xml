@@ -13,8 +13,6 @@
 
     <!-- Jar 版本控制 -->
     <properties>
-        <!-- Spring Boot -->
-        <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
         <!-- Hutool -->
         <cn.hutool.version>4.6.17</cn.hutool.version>
         <!-- mybatis-plus -->
@@ -42,14 +40,6 @@
     <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!-- Avocado Boot Core -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>

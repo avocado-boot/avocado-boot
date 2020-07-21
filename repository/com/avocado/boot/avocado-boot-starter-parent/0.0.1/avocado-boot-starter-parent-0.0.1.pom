@@ -3,7 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.avocado.boot</groupId>
+    <parent>
+        <artifactId>avocado-boot-dependencies</artifactId>
+        <groupId>com.avocado.boot</groupId>
+        <version>0.0.1</version>
+    </parent>
+
     <name>avocado-boot-starter-parent</name>
     <artifactId>avocado-boot-starter-parent</artifactId>
     <version>0.0.1</version>
@@ -22,8 +27,6 @@
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <!-- Spring Boot -->
         <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
-        <!-- Avocado Boot -->
-        <avocado-boot-dependencies.version>0.0.1</avocado-boot-dependencies.version>
     </properties>
 
     <!-- 依赖管理 -->
@@ -34,14 +37,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- Avocado Boot -->
-            <dependency>
-                <groupId>com.avocado.boot</groupId>
-                <artifactId>avocado-boot-dependencies</artifactId>
-                <version>${avocado-boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -91,10 +86,4 @@
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>avocado-maven-repository</id>
-            <url>file:D:/IDEA/IdeaProjects/avocado-boot/repository</url>
-        </repository>
-    </distributionManagement>
 </project>
