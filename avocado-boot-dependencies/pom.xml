@@ -13,6 +13,8 @@
 
     <!-- Jar 版本控制 -->
     <properties>
+        <!-- Spring Boot -->
+        <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
         <!-- Hutool -->
         <cn.hutool.version>4.6.17</cn.hutool.version>
         <!-- mybatis-plus -->
@@ -26,49 +28,57 @@
         <!-- aliyun短信 -->
         <com.aliyun.core.version>4.1.0</com.aliyun.core.version>
         <!-- Avocado Boot Core -->
-        <com.avocado.boot.core.version>0.0.1</com.avocado.boot.core.version>
+        <avocado-boot-core.version>0.0.1</avocado-boot-core.version>
         <!-- Avocado Boot Log -->
-        <com.avocado.boot.log.version>0.0.1</com.avocado.boot.log.version>
+        <avocado-boot-log.version>0.0.1</avocado-boot-log.version>
         <!-- Avocado Boot Redis -->
-        <com.avocado.boot.redis.version>0.0.1</com.avocado.boot.redis.version>
+        <avocado-boot-redis.version>0.0.1</avocado-boot-redis.version>
         <!-- Avocado Boot Validation -->
-        <com.avocado.boot.validation.version>0.0.1</com.avocado.boot.validation.version>
+        <avocado-boot-validation.version>0.0.1</avocado-boot-validation.version>
         <!-- Avocado Boot Bus -->
-        <com.avocado.boot.bus.version>0.0.1</com.avocado.boot.bus.version>
+        <avocado-boot-bus.version>0.0.1</avocado-boot-bus.version>
     </properties>
 
     <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <!-- Avocado Boot Core -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-starter-core</artifactId>
-                <version>${com.avocado.boot.core.version}</version>
+                <version>${avocado-boot-core.version}</version>
             </dependency>
             <!-- Avocado Boot Log -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-starter-log</artifactId>
-                <version>${com.avocado.boot.log.version}</version>
+                <version>${avocado-boot-log.version}</version>
             </dependency>
             <!-- Avocado Boot Redis -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-starter-redis</artifactId>
-                <version>${com.avocado.boot.redis.version}</version>
+                <version>${avocado-boot-redis.version}</version>
             </dependency>
             <!-- Avocado Boot Validation -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-starter-validation</artifactId>
-                <version>${com.avocado.boot.validation.version}</version>
+                <version>${avocado-boot-validation.version}</version>
             </dependency>
             <!-- Avocado Boot Bus -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-starter-bus</artifactId>
-                <version>${com.avocado.boot.bus.version}</version>
+                <version>${avocado-boot-bus.version}</version>
             </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>
@@ -115,4 +125,10 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <repository>
+            <id>avocado-maven-repository</id>
+            <url>file:D:/IDEA/IdeaProjects/avocado-boot/repository</url>
+        </repository>
+    </distributionManagement>
 </project>

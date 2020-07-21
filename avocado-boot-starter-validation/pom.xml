@@ -30,7 +30,6 @@
         <dependency>
             <groupId>com.avocado.boot</groupId>
             <artifactId>avocado-boot-starter-core</artifactId>
-            <version>0.0.1</version>
         </dependency>
     </dependencies>
 
