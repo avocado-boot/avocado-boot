@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @date ：2020-07-16
  */
 @Component
-public class DeBugLogOutputSupport extends WarnLogOutputSupport implements LogOutput {
+public class DeBugLogOutputSupport extends AbstractLogOutputSupport implements LogOutput {
 
     private static final Logger log = LoggerFactory.getLogger(DeBugLogOutputSupport.class);
 

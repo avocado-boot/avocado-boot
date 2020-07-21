@@ -1,4 +1,4 @@
-package com.avocado.boot.starter.log.aop;
+package com.avocado.boot.starter.log.config;
 
 import com.avocado.boot.starter.core.exception.BusinessException;
 import com.avocado.boot.starter.log.Logs;
@@ -17,6 +17,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -28,18 +29,22 @@ import java.util.Objects;
  * @author ：qiaoliang
  * @date ：2020-07-16
  */
+@ComponentScan(basePackages = {
+        "com.avocado.boot.starter.log.service",
+        "com.avocado.boot.starter.log.factory"
+})
 @Aspect
 @EnableConfigurationProperties({LogProperties.class})
 @ConditionalOnProperty(prefix = "avocado.log", name = "enabled", havingValue = "true",matchIfMissing = true)
-public class LogAspect {
+public class LogAspectConfiguration {
 
     private final LogConfigurerSupport logConfigurerSupport;
     private final LogOutput logOutput;
     private Logs logs = null;
 
-    public LogAspect(LogConfigurerSupport logConfigurerSupport,
-                                      LogConfigurationAdapter logConfigurationAdapter,
-                                      LogProperties logProperties) {
+    public LogAspectConfiguration(LogConfigurerSupport logConfigurerSupport,
+                                  LogConfigurationAdapter logConfigurationAdapter,
+                                  LogProperties logProperties) {
         this.logOutput = logConfigurationAdapter.getLogConfiguration
                 (LogLevelType.valueOf(logProperties.getLevel()));
         this.logConfigurerSupport = logConfigurerSupport;
