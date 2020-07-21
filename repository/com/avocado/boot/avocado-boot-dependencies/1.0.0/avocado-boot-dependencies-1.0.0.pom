@@ -39,8 +39,6 @@
         <cn.hutool.version>4.6.17</cn.hutool.version>
         <!-- mybatis-plus -->
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
-        <!-- mysql-connector -->
-        <mysql.connector.java.version>8.0.16</mysql.connector.java.version>
         <!-- mybatis-plus -->
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <!-- google-guava -->
@@ -111,12 +109,6 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
-            </dependency>
-            <!--MySQL的JDBC驱动-->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.connector.java.version}</version>
             </dependency>
             <!--Mybatis的增强工具包，可简化开发。-->
             <dependency>
