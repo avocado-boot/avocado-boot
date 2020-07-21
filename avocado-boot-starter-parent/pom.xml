@@ -4,15 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.avocado.boot</groupId>
         <artifactId>avocado-boot-dependencies</artifactId>
+        <groupId>com.avocado.boot</groupId>
         <version>0.0.1</version>
     </parent>
 
+    <name>avocado-boot-starter-parent</name>
     <artifactId>avocado-boot-starter-parent</artifactId>
     <version>0.0.1</version>
-
-    <name>avocado-boot-starter-parent</name>
     <packaging>pom</packaging>
 
     <!-- Jar 版本控制 -->
@@ -26,7 +25,23 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!-- Spring Boot -->
+        <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
     </properties>
+
+    <!-- 依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -71,5 +86,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
