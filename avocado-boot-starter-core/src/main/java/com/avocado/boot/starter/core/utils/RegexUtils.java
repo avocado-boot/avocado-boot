@@ -146,7 +146,7 @@ public class RegexUtils {
     }
 
     /**
-     * 匹配IP地址(简单匹配，格式，如：192.168.1.1，127.0.0.1，没有匹配IP段的大小)
+     * 匹配IP地址(简单匹配，格式，如：192.168.1.1，127.1.0.0，没有匹配IP段的大小)
      * @param ipAddress IPv4标准地址
      * @return 验证成功返回true，验证失败返回false
      */

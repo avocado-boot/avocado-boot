@@ -6,12 +6,12 @@
     <parent>
         <artifactId>avocado-boot-dependencies</artifactId>
         <groupId>com.avocado.boot</groupId>
-        <version>0.0.1</version>
+        <version>1.0.0</version>
     </parent>
 
     <name>avocado-boot-starter-parent</name>
     <artifactId>avocado-boot-starter-parent</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <!-- Jar 版本控制 -->
