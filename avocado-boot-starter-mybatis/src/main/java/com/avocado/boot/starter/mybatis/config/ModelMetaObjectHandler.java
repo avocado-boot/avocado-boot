@@ -15,8 +15,9 @@ import java.util.Objects;
 public class ModelMetaObjectHandler implements MetaObjectHandler {
 
     /**创建时间**/
-    private static final String CREATE_TIME = "createdTime";
-
+    private static final String CREATE_TIME = "createTime";
+    /**修改时间**/
+    private static final String UPDATE_TIME = "updateTime";
     @Override
     public void insertFill(MetaObject metaObject) {
         // 获取到需要被填充的字段值
@@ -27,6 +28,10 @@ public class ModelMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void updateFill(MetaObject metaObject) {
+        // 获取到需要被填充的字段值
+        if(Objects.isNull(getFieldValByName(UPDATE_TIME, metaObject))){
+            setFieldValByName(UPDATE_TIME, new Date(),metaObject);
+        }
     }
 
 

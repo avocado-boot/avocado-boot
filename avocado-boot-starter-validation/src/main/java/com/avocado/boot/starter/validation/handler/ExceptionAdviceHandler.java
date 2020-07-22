@@ -1,4 +1,4 @@
-package com.avocado.boot.starter.validation.config;
+package com.avocado.boot.starter.validation.handler;
 
 import com.avocado.boot.starter.core.exception.BusinessException;
 import org.springframework.http.HttpStatus;
@@ -17,9 +17,9 @@ import javax.validation.ConstraintViolationException;
  * @author ：qiaoliang
  * @date ：2020-06-29
  */
-@ControllerAdvice
 @ResponseBody
-public class ExceptionAdviceConfig {
+@ControllerAdvice
+public class ExceptionAdviceHandler {
     /**
      * 处理Get请求中 使用@Valid 验证路径中请求实体校验失败后抛出的异常，详情继续往下看代码
      *

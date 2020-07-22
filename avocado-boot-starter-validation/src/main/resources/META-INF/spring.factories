@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.avocado.boot.starter.validation.config.ExceptionAdviceConfig
+com.avocado.boot.starter.validation.config.ValidationConfig
