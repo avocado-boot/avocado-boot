@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.avocado.boot.starter.log.aop.LogAspect
+com.avocado.boot.starter.log.config.LogConfiguration
