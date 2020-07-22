@@ -55,6 +55,8 @@
         <avocado-boot-validation.version>1.0.0</avocado-boot-validation.version>
         <!-- Avocado Boot Bus -->
         <avocado-boot-bus.version>1.0.0</avocado-boot-bus.version>
+        <!-- Avocado Boot Swagger2 -->
+        <avocado-boot-swagger2.version>1.0.0</avocado-boot-swagger2.version>
     </properties>
 
     <!-- 依赖管理 -->
@@ -97,6 +99,12 @@
                 <groupId>com.avocado.boot</groupId>
                 <artifactId>avocado-boot-starter-bus</artifactId>
                 <version>${avocado-boot-bus.version}</version>
+            </dependency>
+            <!-- Avocado Boot Swagger2 -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-swagger2</artifactId>
+                <version>${avocado-boot-swagger2.version}</version>
             </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>
