@@ -30,7 +30,7 @@ import java.util.Objects;
  */
 @Aspect
 @EnableConfigurationProperties({LogProperties.class})
-@ConditionalOnProperty(prefix = "avocado.log", name = "enabled", havingValue = "true",matchIfMissing = true)
+@ConditionalOnProperty(prefix = "log", name = "enabled", havingValue = "true",matchIfMissing = true)
 public class LogAspect {
 
     private final LogConfigurerSupport logConfigurerSupport;

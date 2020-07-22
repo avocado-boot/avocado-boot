@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author ：qiaoliang
  * @date ：2020-07-08
  */
-@ConfigurationProperties(prefix = "avocado.log")
+@ConfigurationProperties(prefix = "log")
 public class LogProperties {
     /**
      * 是否启用日志输出,生产环境建议关闭
