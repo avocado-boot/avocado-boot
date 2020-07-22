@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>avocado-boot-starter-parent</artifactId>
+        <groupId>com.avocado.boot</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <name>avocado-boot-starter-swagger2</name>
+    <artifactId>avocado-boot-starter-swagger2</artifactId>
+    <version>1.0.0</version>
+    <description>Swagger2</description>
+    <url>https://github.com/gitQiao/avocado-boot</url>
+    <organization>
+        <name>Avocado Personal Tailor.</name>
+        <url>https://github.com/gitQiao</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>LiangQiao</name>
+            <email>1224999091@qq.com</email>
+            <organization>Avocado Personal Tailor.</organization>
+            <organizationUrl>https://github.com/gitQiao</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/gitQiao/avocado-boot</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gitQiao/avocado-boot.git</developerConnection>
+        <url>https://github.com/gitQiao/avocado-boot</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/gitQiao/avocado-boot/issues</url>
+    </issueManagement>
+    <dependencies>
+        <!--spring-boot-starter-web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--swagger2-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <!--swagger2 ui包-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+        </dependency>
+    </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>avocado-maven-repository</id>
+            <url>file:../repository</url>
+        </repository>
+    </distributionManagement>
+</project>
