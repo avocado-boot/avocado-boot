@@ -3,7 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.avocado.boot</groupId>
+    <parent>
+        <artifactId>avocado-boot-starter-parent</artifactId>
+        <groupId>com.avocado.boot</groupId>
+        <version>1.0.0</version>
+    </parent>
     <name>avocado-boot-starter-bus</name>
     <artifactId>avocado-boot-starter-bus</artifactId>
     <version>1.0.0</version>
@@ -30,18 +34,6 @@
         <system>GitHub</system>
         <url>https://github.com/gitQiao/avocado-boot/issues</url>
     </issueManagement>
-    <!-- 依赖管理 -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.avocado.boot</groupId>
-                <artifactId>avocado-boot-dependencies</artifactId>
-                <version>1.0.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <!--  核心包  -->
         <dependency>
