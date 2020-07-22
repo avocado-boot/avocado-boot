@@ -14,7 +14,6 @@ import java.util.Map;
  * @author ：qiaoliang
  * @date ：2020-07-16
  */
-@Component
 public class LogConfigurationAdapter implements ApplicationContextAware,LogConfigurerComposite {
 
     private static Map<LogLevelType, LogOutput> LOG_MAP;
