@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date ：2020-07-22
  */
 @ConfigurationProperties(prefix = "swagger2")
-public class SwaggerProperties {
+public class Swagger2Properties {
     /**
      * 是否启用swagger,生产环境建议关闭
      */

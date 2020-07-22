@@ -1,6 +1,6 @@
 package com.avocado.boot.starter.swagger2.config;
 
-import com.avocado.boot.starter.swagger2.properties.SwaggerProperties;
+import com.avocado.boot.starter.swagger2.properties.Swagger2Properties;
 import io.swagger.annotations.Api;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -21,15 +21,15 @@ import springfox.documentation.swagger2.configuration.Swagger2DocumentationConfi
  * @date ：2020-07-22
  */
 @Configuration
-@EnableConfigurationProperties({SwaggerProperties.class})
+@EnableConfigurationProperties({Swagger2Properties.class})
 @ConditionalOnProperty(prefix = "swagger2", name = "enabled", havingValue = "true")
 @Import({Swagger2DocumentationConfiguration.class})
 public class SwaggerAutoConfiguration {
 
-    private SwaggerProperties swaggerProperties;
+    private Swagger2Properties swagger2Properties;
 
-    public SwaggerAutoConfiguration(SwaggerProperties swaggerProperties) {
-        this.swaggerProperties = swaggerProperties;
+    public SwaggerAutoConfiguration(Swagger2Properties swagger2Properties) {
+        this.swagger2Properties = swagger2Properties;
     }
 
     @Bean
@@ -44,11 +44,11 @@ public class SwaggerAutoConfiguration {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title(swaggerProperties.getTitle())
-                .description(swaggerProperties.getDescription())
-                .version(swaggerProperties.getVersion())
-                .contact(new Contact(swaggerProperties.getName(), swaggerProperties.getUrl()
-                        , swaggerProperties.getEmail()))
+                .title(swagger2Properties.getTitle())
+                .description(swagger2Properties.getDescription())
+                .version(swagger2Properties.getVersion())
+                .contact(new Contact(swagger2Properties.getName(), swagger2Properties.getUrl()
+                        , swagger2Properties.getEmail()))
                 .build();
     }
 
