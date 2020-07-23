@@ -16,7 +16,7 @@
     </organization>
     <developers>
         <developer>
-            <name>LiangQiao</name>
+            <name>QiaoLiang</name>
             <email>1224999091@qq.com</email>
             <organization>Avocado Personal Tailor.</organization>
             <organizationUrl>https://github.com/gitQiao</organizationUrl>
@@ -31,6 +31,14 @@
         <system>GitHub</system>
         <url>https://github.com/gitQiao/avocado-boot/issues</url>
     </issueManagement>
+    <!-- 许可证信息 -->
+    <licenses>
+        <!-- Apache许可证 -->
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
     <!-- Jar 版本控制 -->
     <properties>
         <!-- Spring Boot -->
@@ -160,6 +168,25 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>${name}</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 
     <distributionManagement>
         <repository>
