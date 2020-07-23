@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.configuration.Swagger2DocumentationConfi
  */
 @Configuration
 @EnableConfigurationProperties({Swagger2Properties.class})
-@ConditionalOnProperty(prefix = "swagger2", name = "enabled", havingValue = "true")
+@ConditionalOnProperty(prefix = "swagger", name = "enabled", havingValue = "true")
 @Import({Swagger2DocumentationConfiguration.class})
 public class SwaggerAutoConfiguration {
 
