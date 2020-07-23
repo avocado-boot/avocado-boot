@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.avocado.boot</groupId>
+    <artifactId>OSSRH-59407</artifactId>
+    <version>1.0.0</version>
+    <name>OSSRH-59407</name>
+    <packaging>pom</packaging>
+    <url>https://github.com/gitQiao/avocado-boot</url>
+    <organization>
+        <name>Avocado Personal Tailor.</name>
+        <url>https://github.com/gitQiao</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>qiaoliang</name>
+            <email>1224999091@qq.com</email>
+            <organization>Avocado Personal Tailor.</organization>
+            <organizationUrl>https://github.com/gitQiao</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/gitQiao/avocado-boot</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gitQiao/avocado-boot.git</developerConnection>
+        <url>https://github.com/gitQiao/avocado-boot</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/gitQiao/avocado-boot/issues</url>
+    </issueManagement>
+    <!-- 许可证信息 -->
+    <licenses>
+        <!-- Apache许可证 -->
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <profiles>
+        <profile>
+            <id>${name}</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+</project>
