@@ -1,7 +1,7 @@
-package com.avocado.boot.starter.bus.listeners;
+package com.avocado.boot.starter.core.bus.listeners;
 
-import com.avocado.boot.starter.bus.event.AbstractDomainEvent;
-import com.avocado.boot.starter.bus.listeners.DomainEventPublisher;
+import com.avocado.boot.starter.core.bus.event.AbstractDomainEvent;
+import com.avocado.boot.starter.core.bus.listeners.DomainEventPublisher;
 import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;

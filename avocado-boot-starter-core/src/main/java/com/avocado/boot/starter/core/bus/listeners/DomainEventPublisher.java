@@ -1,6 +1,6 @@
-package com.avocado.boot.starter.bus.listeners;
+package com.avocado.boot.starter.core.bus.listeners;
 
-import com.avocado.boot.starter.bus.event.AbstractDomainEvent;
+import com.avocado.boot.starter.core.bus.event.AbstractDomainEvent;
 
 /**
  * 触发接口限制

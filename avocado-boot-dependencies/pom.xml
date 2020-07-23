@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.avocado.boot</groupId>
     <artifactId>avocado-boot-dependencies</artifactId>
     <version>1.0.0</version>
@@ -41,8 +40,6 @@
     </licenses>
     <!-- Jar 版本控制 -->
     <properties>
-        <!-- Spring Boot -->
-        <spring-boot-dependencies.version>2.3.1.RELEASE</spring-boot-dependencies.version>
         <!-- Hutool -->
         <cn.hutool.version>4.6.17</cn.hutool.version>
         <!-- mybatis-plus -->
@@ -61,6 +58,8 @@
         <avocado-boot-redis.version>1.0.0</avocado-boot-redis.version>
         <!-- Avocado Boot Validation -->
         <avocado-boot-validation.version>1.0.0</avocado-boot-validation.version>
+        <!-- Avocado Boot Mybatis -->
+        <avocado-boot-mybatis.version>1.0.0</avocado-boot-mybatis.version>
         <!-- Avocado Boot Bus -->
         <avocado-boot-bus.version>1.0.0</avocado-boot-bus.version>
         <!-- Avocado Boot Swagger2 -->
@@ -74,14 +73,6 @@
     <!-- 依赖管理 -->
     <dependencyManagement>
         <dependencies>
-            <!-- Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-dependencies.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!-- Avocado Boot Core -->
             <dependency>
                 <groupId>com.avocado.boot</groupId>
@@ -118,17 +109,17 @@
                 <artifactId>avocado-boot-starter-swagger2</artifactId>
                 <version>${avocado-boot-swagger2.version}</version>
             </dependency>
+            <!-- Avocado Boot Mybatis -->
+            <dependency>
+                <groupId>com.avocado.boot</groupId>
+                <artifactId>avocado-boot-starter-mybatis</artifactId>
+                <version>${avocado-boot-mybatis.version}</version>
+            </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${cn.hutool.version}</version>
-            </dependency>
-            <!--Mybatis的增强工具包，可简化开发。-->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus.version}</version>
             </dependency>
             <!--Mybatis的增强工具包，可简化开发。-->
             <dependency>

@@ -1,4 +1,4 @@
-package com.avocado.boot.starter.bus.event;
+package com.avocado.boot.starter.core.bus.event;
 
 import java.util.Date;
 
