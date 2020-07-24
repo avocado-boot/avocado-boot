@@ -71,6 +71,23 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <!-- 插件管理 -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${parent.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <!-- 公共插件 -->
         <plugins>
             <!-- Maven 打包时跳过测试用例 -->
