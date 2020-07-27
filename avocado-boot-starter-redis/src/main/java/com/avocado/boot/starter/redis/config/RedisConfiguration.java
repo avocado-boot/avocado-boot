@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cache.Cache;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -63,6 +64,7 @@ public class RedisConfiguration extends CachingConfigurerSupport {
      * 注入封装RedisTemplate
      */
     @Bean
+    @ConditionalOnMissingBean
     public RedisUtil redisUtil(RedisTemplate<Object, Object> redisTemplate){
         RedisUtil redisUtil = new RedisUtil();
         redisUtil.setRedisTemplate(redisTemplate);
