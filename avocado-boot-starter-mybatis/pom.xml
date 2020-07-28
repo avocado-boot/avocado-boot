@@ -41,10 +41,4 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <repository>
-            <id>avocado-maven-repository</id>
-            <url>file:../repository</url>
-        </repository>
-    </distributionManagement>
 </project>
