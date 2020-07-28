@@ -7,9 +7,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * 系统操作日志注解
+ *
  * @author ： qiaoliang
- * @description : 系统操作日志注解
- * @date ： 2020-04-16
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

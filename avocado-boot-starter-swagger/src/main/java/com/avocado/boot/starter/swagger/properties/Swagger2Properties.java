@@ -1,46 +1,30 @@
-package com.avocado.boot.starter.swagger2.properties;
+package com.avocado.boot.starter.swagger.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-22
  */
 @ConfigurationProperties(prefix = "swagger")
 public class Swagger2Properties {
-    /**
-     * 是否启用swagger,生产环境建议关闭
-     */
+    /**是否启用swagger,生产环境建议关闭**/
     private boolean enabled = false;
-    /**
-     * 文档标题
-     */
+    /**文档标题**/
     private String title = "接口文档";
-    /**
-     * 文档描述
-     */
+    /**文档描述**/
     private String description = "接口文档描述";
 
-    /**
-     * 作者
-     */
-    private String name = "乔梁";
+    /**作者**/
+    private String name = "qiaoliang";
 
-    /**
-     * 作者联系地址
-     */
+    /**作者联系地址**/
     private String url = "http://localhost:8080/doc.html";
 
-    /**
-     * 作者联系email
-     */
+    /**作者联系email**/
     private String email = "1224999091@qq.com";
 
-    /**
-     * 版本
-     */
+    /**版本**/
     private String version = "1.0.0";
-
 
     public boolean isEnabled() {
         return enabled;

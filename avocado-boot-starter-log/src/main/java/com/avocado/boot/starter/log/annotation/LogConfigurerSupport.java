@@ -5,7 +5,6 @@ import com.avocado.boot.starter.log.Logs;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-20
  */
 public class LogConfigurerSupport implements LogConfigurer {
 

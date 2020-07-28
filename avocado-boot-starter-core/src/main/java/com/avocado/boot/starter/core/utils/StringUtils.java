@@ -27,7 +27,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为字节数组
      *
      * @author ：qiaoliang
-     * @param str : 字符串
+     * @param str : 传入字符串
      * @return byte[]
      */
     public static byte[] getBytes(String str) {
@@ -46,7 +46,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为字节数组
      *
      * @author ：qiaoliang
-     * @param bytes : 字节数组
+     * @param bytes : 传入字节数组
      * @return java.lang.String
      */
     public static String toString(byte[] bytes) {
@@ -61,7 +61,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为Boolean类型
      * 'true', 'on', 'y', 't', 'yes' or '1' (case insensitive) will return true. Otherwise, false is returned.
      * @author ：qiaoliang
-     * @param val : 字符串
+     * @param val : 传入字符串
      * @return java.lang.Boolean
      */
     public static Boolean toBoolean(final Object val) {
@@ -76,7 +76,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 如果对象为空，则使用defaultVal值
      * see: ObjectUtils.toString(obj, defaultVal)
      *
-     * @param obj 参数
+     * @param obj 传入参数
      * @param defaultVal 默认值
      * @return 字符串
      */
@@ -106,7 +106,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为Double类型
      *
      * @author ：qiaoliang
-     * @param val : 参数
+     * @param val : 传入参数
      * @return java.lang.Double
      */
     public static Double toDouble(Object val) {
@@ -124,7 +124,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为Float类型
      *
      * @author ：qiaoliang
-     * @param val : 参数
+     * @param val : 传入参数
      * @return java.lang.Float
      */
     public static Float toFloat(Object val) {
@@ -135,7 +135,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为Long类型
      *
      * @author ：qiaoliang
-     * @param val :参数
+     * @param val :传入参数
      * @return java.lang.Long
      */
     public static Long toLong(Object val) {
@@ -146,7 +146,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 转换为Integer类型
      *
      * @author ：qiaoliang
-     * @param val : 参数
+     * @param val : 传入参数
      * @return java.lang.Integer
      */
     public static Integer toInteger(Object val) {
@@ -249,6 +249,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 驼峰转下划线
      *
+     * @author ：qiaoliang
      * @param param 参数
      * @return java.lang.String
      */
@@ -272,6 +273,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 下划线转驼峰
+     *
+     * @author ：qiaoliang
      * @param param 参数
      * @return java.lang.String
      */
@@ -292,6 +295,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 格式化存储单位
      *
+     * @author ：qiaoliang
      * @param size byte 字节
      * @return java.lang.String
      */
@@ -322,6 +326,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 匿名手机号
      *
+     * @author ：qiaoliang
      * @param mobile 手机号
      * @return 152****4799
      */
@@ -336,6 +341,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 匿名银行卡号
      *
+     * @author ：qiaoliang
      * @param bankCard 银行卡
      * @return java.lang.String
      */
@@ -349,6 +355,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 匿名身份证
      *
+     * @author ：qiaoliang
      * @param idCard 身份证
      * @return 4304*****7733
      */
@@ -375,6 +382,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 移动：1703、1705、1706
      * 联通：1704、1707、1708、1709、171
      *
+     * @author ：qiaoliang
      * @param mobile 手机号
      * @return boolean
      */
@@ -499,9 +507,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     }
 
 
-    /**
-     * 处理非法字符
-     */
+    /**处理非法字符**/
     private static List<Pattern> patterns = null;
 
     private static List<Object[]> getXssPatternList() {
@@ -559,7 +565,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 密码强度
      *
      * @author ：qiaoliang
-     * @param passwordStr :
+     * @param passwordStr : 传入密码
      * @return Z = 字母 S = 数字 T = 特殊字符
      */
     public static String checkPassword(String passwordStr) {

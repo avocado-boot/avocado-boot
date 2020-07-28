@@ -10,7 +10,6 @@ import java.util.Objects;
  * mybatis默认配置
  *
  * @author ：qiaoliang
- * @date ：2020-06-15
  */
 public class ModelMetaObjectHandler implements MetaObjectHandler {
 

@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
  * 缓存工具
  *
  * @author ：qiaoliang
- * @date ：2020-06-15
  */
 public class RedisUtil {
 
@@ -34,10 +33,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【指定缓存失效时间 2017年12月20日14:54:58 qiaoliang】
-     * @param key
-     * @param time
-     * @return
+     * 指定缓存失效时间
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param time : 缓存时间
+     * @return boolean
      */
     public static boolean expire(String key,long time){
         try {
@@ -54,18 +55,23 @@ public class RedisUtil {
     }
 
     /**
-     * 【根据key 获取过期时间 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键 不能为null
-     * @return 时间(秒) 返回0代表为永久有效
+     * 根据key 获取过期时间
+     *
+     * @author ：qiaoliang
+     * @param key : 键 不能为null
+     * @return long 时间(秒) 返回0代表为永久有效
      */
     public static long getExpire(String key){
         return redisTemplate.getExpire(key,TimeUnit.SECONDS);
     }
 
     /**
-     * 【判断key是否存在 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @return true 存在 false不存在
+     * 判断key是否存在
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return boolean
+     * @date 2020-07-28 14:33
      */
     public static boolean isKey(String key){
         try {
@@ -79,8 +85,11 @@ public class RedisUtil {
     }
 
     /**
-     * 【删除缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 可以传一个值 或多个
+     * 删除缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return java.lang.Integer
      */
     public static Integer delete(String ... key){
         if(key!=null&&key.length>0){
@@ -99,12 +108,12 @@ public class RedisUtil {
         return 0;
     }
 
-
-
     /**
-     * 【普通缓存获取 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @return 值
+     * 普通缓存获取
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return java.lang.Object
      */
     public static Object get(String key){
         try {
@@ -116,10 +125,12 @@ public class RedisUtil {
 
 
     /**
-     * 【普通缓存放入 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @return true成功 false失败
+     * 普通缓存放入
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param value : 值
+     * @return boolean
      */
     public static boolean set(String key,Object value) {
         try {
@@ -135,11 +146,14 @@ public class RedisUtil {
     }
 
     /**
-     * 【普通缓存放入并设置时间 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @param time 时间(秒) time要大于0 如果time小于等于0 将设置无限期
-     * @return true成功 false 失败
+     * 普通缓存放入并设置时间
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param time : 时间(秒) time要大于0 如果time小于等于0 将设置无限期
+     * @param value : 值
+     * @return boolean
+     * @date 2020-07-28 14:34
      */
     public static boolean set(String key,long time,Object value){
         try {
@@ -156,11 +170,14 @@ public class RedisUtil {
             unbindConnection();
         }
     }
+
     /**
-     * 【递增 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param delta 要增加几(大于0)
-     * @return
+     * 递增
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param delta : 要增加几(大于0)
+     * @return long
      */
     public static long incr(String key, long delta){
         if(delta<0){
@@ -173,12 +190,13 @@ public class RedisUtil {
         }
     }
 
-
     /**
-     * 【递减 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param delta 要减几(大于0)
-     * @return
+     * 递减
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param delta : 要减几(大于0)
+     * @return long
      */
     public static long decr(String key, long delta){
         if(delta<0){
@@ -191,12 +209,13 @@ public class RedisUtil {
         }
     }
 
-
     /**
-     * 【HashGet 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键 不能为null
-     * @param item 项 不能为null
-     * @return 值
+     * HashGet
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 项
+     * @return java.lang.Object
      */
     public static Object hashGet(String key,String item){
         try{
@@ -207,11 +226,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【获取hashKey对应的所有键值 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @return 对应的多个键值
+     * 获取hashKey对应的所有键值
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return java.util.Map<java.lang.Object, java.lang.Object>
      */
-
     public static Map<Object,Object> hashGet(String key){
         try{
             return redisTemplate.opsForHash().entries(key);
@@ -221,10 +241,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【HashSet 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param map 对应多个键值
-     * @return true 成功 false 失败
+     * HashSet
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param map : 对应多个键值
+     * @return boolean
      */
     public static boolean hashsSet(String key, Map<String,Object> map){
         try {
@@ -240,11 +262,13 @@ public class RedisUtil {
 
 
     /**
-     * 【HashSet 并设置时间 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param map 对应多个键值
-     * @param time 时间(秒)
-     * @return true成功 false失败
+     * HashSet
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param map : 对应多个键值
+     * @param time : 时间(秒)
+     * @return boolean
      */
     public static boolean hashsSet(String key, Map<String, Object> map, long time){
         try {
@@ -263,11 +287,13 @@ public class RedisUtil {
 
 
     /**
-     * 【向一张hash表中放入数据,如果不存在将创建 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param item 项
-     * @param value 值
-     * @return true 成功 false失败
+     * 向一张hash表中放入数据,如果不存在将创建
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 项
+     * @param value : 值
+     * @return boolean
      */
     public static boolean hashsSet(String key,String item,Object value) {
         try {
@@ -281,14 +307,15 @@ public class RedisUtil {
         }
     }
 
-
     /**
-     * 【向一张hash表中放入数据,如果不存在将创建 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param item 项
-     * @param value 值
-     * @param time 时间(秒)  注意:如果已存在的hash表有时间,这里将会替换原有的时间
-     * @return true 成功 false失败
+     * 向一张hash表中放入数据,如果不存在将创建
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 项
+     * @param value : 值
+     * @param time : 时间(秒)
+     * @return boolean
      */
     public static boolean hashsSet(String key,String item,Object value,long time) {
         try {
@@ -305,11 +332,12 @@ public class RedisUtil {
         }
     }
 
-
     /**
-     * 【删除hash表中的值 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键 不能为null
-     * @param item 项 可以使多个 不能为null
+     * 删除hash表中的值
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 键
      */
     public static void delectHash(String key, Object... item){
         try{
@@ -320,10 +348,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【判断hash表中是否有该项的值 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键 不能为null
-     * @param item 项 不能为null
-     * @return true 存在 false不存在
+     * 判断hash表中是否有该项的值
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 项
+     * @return boolean
      */
     public static boolean isHashKey(String key, String item){
         try{
@@ -334,11 +364,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【hash递增 如果不存在,就会创建一个 并把新增后的值返回 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param item 项
-     * @param by 要增加几(大于0)
-     * @return
+     * hash递增 如果不存在,就会创建一个 并把新增后的值返回
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 项
+     * @param by : 要增加几(大于0)
+     * @return double
      */
     public static double hashIncr(String key, String item,double by){
         try{
@@ -349,11 +381,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【hash递减 并把新增后的值返回 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param item 项
-     * @param by 要减少记(小于0)
-     * @return
+     * hash递减 并把新增后的值返回
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param item : 项
+     * @param by : 要减少记(小于0)
+     * @return double
      */
     public static double hashDecr(String key, String item,double by){
         try{
@@ -364,9 +398,11 @@ public class RedisUtil {
     }
 
     /**
-     * 【根据key获取Set中的所有值 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @return
+     * 根据key获取Set中的所有值
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return java.util.Set<java.lang.Object>
      */
     public static Set<Object> setGet(String key){
         try {
@@ -380,10 +416,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【根据value从一个set中查询,是否存在 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @return true 存在 false不存在
+     * 根据value从一个set中查询,是否存在
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param value : 值
+     * @return boolean
      */
     public static boolean setIsKey(String key,Object value){
         try {
@@ -397,10 +435,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【将数据放入set缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param values 值 可以是多个
-     * @return 成功个数
+     * 将数据放入set缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param values : 值 可以是多个
+     * @return long
      */
     public static long setSet(String key, Object...values) {
         try {
@@ -414,11 +454,14 @@ public class RedisUtil {
     }
 
     /**
-     * 【将set数据放入缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param time 时间(秒)
-     * @param values 值 可以是多个
-     * @return 成功个数
+     * 将set数据放入缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param time : 时间(秒)
+     * @param values : 值 可以是多个
+     * @return long
+     * @date 2020-07-28 14:39
      */
     public static long setSetAndTime(String key,long time,Object...values) {
         try {
@@ -436,9 +479,11 @@ public class RedisUtil {
     }
 
     /**
-     * 【获取set缓存的长度 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @return
+     * 获取set缓存的长度
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return long
      */
     public static long setGetSetSize(String key){
         try {
@@ -452,10 +497,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【移除值为value的 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param values 值 可以是多个
-     * @return 移除的个数
+     * 移除值为value的
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param values : 值 可以是多个
+     * @return long
      */
     public static long setRemove(String key, Object ...values) {
         try {
@@ -470,11 +517,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【获取list缓存的内容 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param start 开始
-     * @param end 结束  0 到 -1代表所有值
-     * @return
+     * 获取list缓存的内容
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param start : 开始
+     * @param end : 结束  0 到 -1代表所有值
+     * @return java.util.List<java.lang.Object>
      */
     public static List<Object> listGet(String key,long start, long end){
         try {
@@ -488,9 +537,11 @@ public class RedisUtil {
     }
 
     /**
-     * 【获取list缓存的长度 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @return
+     * 获取list缓存的长度
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @return long
      */
     public static long listGetListSize(String key){
         try {
@@ -504,10 +555,12 @@ public class RedisUtil {
     }
 
     /**
-     *  【通过索引 获取list中的值 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param index 索引  index>=0时， 0 表头，1 第二个元素，依次类推；index<0时，-1，表尾，-2倒数第二个元素，依次类推
-     * @return
+     * 通过索引 获取list中的值
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param index : 索引  index>=0时， 0 表头，1 第二个元素，依次类推；index<0时，-1，表尾，-2倒数第二个元素，依次类推
+     * @return java.lang.Object
      */
     public static Object listGetIndex(String key,long index){
         try {
@@ -521,10 +574,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【将list放入缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @return
+     * 将list放入缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param value : 值
+     * @return boolean
      */
     public static boolean listSet(String key, Object value) {
         try {
@@ -539,11 +594,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【将list放入缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @param time 时间(秒)
-     * @return
+     * 将list放入缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param value : 值
+     * @param time : 时间(秒)
+     * @return boolean
      */
     public static boolean listSet(String key, Object value, long time) {
         try {
@@ -561,10 +618,12 @@ public class RedisUtil {
     }
 
     /**
-     * 【将list放入缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @return
+     * 将list放入缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param value : 值
+     * @return boolean
      */
     public static boolean listSet(String key, List<Object> value) {
         try {
@@ -579,11 +638,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【将list放入缓存 2017年12月20日14:54:58 qiaoliang】
-     * @param key 键
-     * @param value 值
-     * @param time 时间(秒)
-     * @return
+     * 将list放入缓存
+     *
+     * @author ：qiaoliang
+     * @param key : 键
+     * @param value : 值
+     * @param time : 时间(秒)
+     * @return boolean
      */
     public static boolean listSet(String key, List<Object> value, long time) {
         try {
@@ -601,11 +662,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【根据索引修改list中的某条数据 2017年12月20日14:54:58 qiaoliang】
+     * 根据索引修改list中的某条数据
+     *
+     * @author ：qiaoliang
      * @param key 键
      * @param index 索引
      * @param value 值
-     * @return
+     * @return boolean
      */
     public static boolean listUpdateIndex(String key, long index,Object value) {
         try {
@@ -620,11 +683,13 @@ public class RedisUtil {
     }
 
     /**
-     * 【移除N个值为value 2017年12月20日14:54:58 qiaoliang】
+     * 移除N个值为value
+     *
+     * @author ：qiaoliang
      * @param key 键
      * @param count 移除多少个
      * @param value 值
-     * @return 移除的个数
+     * @return long
      */
     public long listRemove(String key,long count,Object value) {
         try {
@@ -633,79 +698,6 @@ public class RedisUtil {
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
-        }finally {
-            unbindConnection();
-        }
-    }
-
-    /**<h4>功能：[redis的有序集合][2018/9/14 16:38][创建人：xiaoxiang_hou]</h4>
-     * <h4></h4>
-     */
-    public static void zSetAdd(String key,Object object,Double score){
-        try {
-            redisTemplate.opsForZSet().add(key,object,score);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            unbindConnection();
-        }
-    }
-
-    public static void zSetAdd(String key, Set<ZSetOperations.TypedTuple<Object>> tuples){
-        try {
-            redisTemplate.opsForZSet().add(key,tuples);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            unbindConnection();
-        }
-    }
-    /**<h4>功能：[redis的有序集合][2018/9/14 16:38][创建人：xiaoxiang_hou]</h4>
-     * <h4></h4>
-     */
-    public static Long zSetCount(String key,Double min,Double max){
-        try {
-            Long count = redisTemplate.opsForZSet().count(key,min,max);
-            return count;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 0L;
-        }finally {
-            unbindConnection();
-        }
-    }
-
-    /**<h4>功能：[zset集合的数量][2018/9/18 15:33][创建人：xiaoxiang_hou]</h4>
-     * <h4></h4>
-     */
-    public static Long zSetListSize(String key){
-        try {
-            Long size = redisTemplate.opsForZSet().size(key);
-            return size;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return 0L;
-        }finally {
-            unbindConnection();
-        }
-    }
-    /**<h4>功能：[redis的有序集合从大到小获取][2018/9/14 16:38][创建人：xiaoxiang_hou]</h4>
-     * <h4></h4>
-     */
-    public static Set<Object> zSetGetList(String key,int min,int max){
-        try {
-            Set<Object> list = redisTemplate.opsForZSet().reverseRange(key,new Long(min),new Long(max));
-            return list;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }finally {
-            unbindConnection();
-        }
-    }
-    public static boolean zSetRemove(String key,Object... values ){
-        try{
-            return redisTemplate.opsForZSet().remove(key,values) > 0L;
         }finally {
             unbindConnection();
         }

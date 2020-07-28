@@ -2,7 +2,6 @@ package com.avocado.boot.starter.log;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-16
  */
 public interface LogConfigurer {
 

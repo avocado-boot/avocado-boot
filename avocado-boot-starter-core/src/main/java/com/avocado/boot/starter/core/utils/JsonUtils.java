@@ -49,14 +49,37 @@ public class JsonUtils {
         return Holder.MAPPER;
     }
 
+    /**
+     * 转换string
+     *
+     * @author ：qiaoliang
+     * @param obj : 参数
+     * @return java.lang.String
+     */
     public static String toJson(Object obj) throws JsonProcessingException{
         return Holder.MAPPER.writeValueAsString(obj);
     }
 
+    /**
+     * 转换class
+     *
+     * @author ：qiaoliang
+     * @param json : json
+     * @param clazz : 转换对应class
+     * @return T
+     */
     public static <T> T toBean(String json, Class<T> clazz) throws JsonProcessingException {
         return Holder.MAPPER.readValue(json, clazz);
     }
 
+    /**
+     * 转换List class
+     *
+     * @author ：qiaoliang
+     * @param json : json
+     * @param clazz : class
+     * @return java.util.List<T>
+     */
     public static <T> List<T> toList(String json, Class<T> clazz) throws JsonProcessingException{
         JavaType javaType = Holder.MAPPER.getTypeFactory().constructParametricType(List.class, clazz);
         return Holder.MAPPER.readValue(json, javaType);

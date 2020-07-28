@@ -29,7 +29,11 @@ public class RedisConfiguration extends CachingConfigurerSupport {
     private static final Logger log = LoggerFactory.getLogger(RedisConfiguration.class);
 
     /**
-     * 实例化 RedisTemplate 对象
+     *  实例化 RedisTemplate 对象
+     *
+     * @author ：qiaoliang
+     * @param connectionFactory : connectionFactory
+     * @return org.springframework.data.redis.core.RedisTemplate<java.lang.Object, java.lang.Object>
      */
     @Bean
     public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
@@ -62,6 +66,10 @@ public class RedisConfiguration extends CachingConfigurerSupport {
 
     /**
      * 注入封装RedisTemplate
+     *
+     * @author ：qiaoliang
+     * @param redisTemplate : RedisTemplate
+     * @return com.avocado.boot.starter.redis.utils.RedisUtil
      */
     @Bean
     @ConditionalOnMissingBean

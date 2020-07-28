@@ -32,13 +32,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 日期型字符串转化为日期 格式
-     * {
-     * "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM",
-     * "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
-     * "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM",
-     * "yyyyMMdd", "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyyMM"}
-     * @param str 日期
-     * @return date
+     *
+     * @author ：qiaoliang
+     * @param str 时间字符串
+     * @return java.util.Date
      */
     public static Date parseDate(String str) {
         if (str == null) {
@@ -55,7 +52,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当前日期字符串 格式（yyyy-MM-dd）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatCurrentDate() {
@@ -64,8 +60,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前日期字符串 格式（yyyy-MM-dd） pattern可以为："yyyy-MM-dd" "HH:mm:ss" "E"
-     * @param pattern 格式
-     * @return 当前日期字符串
+     *
+     * @author ：qiaoliang
+     * @param pattern : 时间格式
+     * @return java.lang.String
      */
     public static String formatCurrentDate(String pattern) {
         return DateFormatUtils.format(new Date(), pattern);
@@ -76,7 +74,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      *
      * @author ：qiaoliang
      * @param date : 时间
-     * @param pattern : 格式
+     * @param pattern : 时间格式
      * @return java.lang.String
      */
     public static String formatDate(Date date, String pattern) {
@@ -93,7 +91,8 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取当前时间戳（yyyyMMddHHmmss）
      *
-     * @return nowTimeStamp
+     * @author ：qiaoliang
+     * @return long
      */
     public static long getCurrentTimestamp() {
         long nowTimeStamp = Long.parseLong(getCurrentTimestampStr());
@@ -104,7 +103,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 获取当前时间戳（yyyyMMddHHmmss）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String getCurrentTimestampStr() {
@@ -115,7 +113,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 获取Unix时间戳
      *
      * @author ：qiaoliang
-
      * @return long
      */
     public static long getCurrentUnixTimestamp() {
@@ -127,7 +124,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 获取Unix时间戳
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String getCurrentUnixTimestampStr() {
@@ -238,10 +234,11 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 增加日期
      *
+     * @author ：qiaoliang
      * @param date 时间
      * @param field  Calendar.MONTH,Calendar.DAY_OF_YEAR
      * @param amount 正数为将来时间, 负数为过去时间
-     * @return 增加后的日期
+     * @return java.util.Date
      */
     public static Date getAddDate(Date date, int field, int amount) {
         Calendar cl = Calendar.getInstance();
@@ -266,7 +263,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当前时间字符串 格式（HH:mm:ss）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatTime() {
@@ -277,7 +273,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当前日期和时间字符串 格式（yyyy-MM-dd HH:mm:ss）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatCurrentDateTime() {
@@ -288,7 +283,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当前年份字符串 格式（yyyy）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatYear() {
@@ -299,7 +293,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当前月份字符串 格式（MM）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatMonth() {
@@ -310,7 +303,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当天字符串 格式（dd）
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatDay() {
@@ -321,7 +313,6 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * 得到当前星期字符串 格式（E）星期几
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String formatWeek() {
@@ -471,13 +462,13 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     }
 
-
     /**
      * Unix时间戳转换成指定格式日期字符串
      *
-     * @param timestampString 时间戳 如："1473048265";
-     * @param pattern         要格式化的格式 默认："yyyy-MM-dd HH:mm:ss";
-     * @return 返回结果 如："2016-09-05 16:06:42";
+     * @author ：qiaoliang
+     * @param timestampString : 时间戳 如："1473048265";
+     * @param pattern : 要格式化的格式 默认："yyyy-MM-dd HH:mm:ss";
+     * @return java.lang.String
      */
     public static String unixTimeStamp2Date(String timestampString, String pattern) {
         if (StringUtils.isBlank(pattern)) {
@@ -491,6 +482,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 日期格式字符串转换成Unix时间戳
      *
+     * @author ：qiaoliang
      * @param dateStr 字符串日期
      * @param pattern 如：yyyy-MM-dd HH:mm:ss
      * @return 字符串

@@ -6,9 +6,7 @@ import java.util.Date;
  * @author ：qiaoliang
  */
 public class AbstractDomainEvent {
-    /**
-     * 创建时间
-     **/
+    /**创建时间**/
     private final Date curredTime;
 
     public AbstractDomainEvent() {

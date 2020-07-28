@@ -17,7 +17,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * IP约束
  *
  * @author ：qiaoliang
- * @date ：2020-06-18
  */
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)

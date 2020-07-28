@@ -14,7 +14,6 @@ import java.util.Objects;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-07
  */
 public class Logs {
 
@@ -47,6 +46,13 @@ public class Logs {
     private String errorCountent;
 
 
+    /**
+     * 解析请求参数
+     *
+     * @author ：qiaoliang
+     * @param request : request
+     * @param joinPoint : 请求
+     */
     public void beforeCalling(HttpServletRequest request, JoinPoint joinPoint){
         if (Objects.nonNull(request)) {
             String headerUser = request.getHeader(CURRENT_USER_ID_HEADER);

@@ -7,7 +7,6 @@ import javax.validation.ConstraintValidatorContext;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-06-18
  */
 public class BankCardInvalidImpl implements ConstraintValidator<BankCardInvalid,Object> {
     @Override

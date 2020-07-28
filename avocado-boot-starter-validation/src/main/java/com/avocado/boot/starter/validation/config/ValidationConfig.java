@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-22
  */
 @Configuration
 public class ValidationConfig {

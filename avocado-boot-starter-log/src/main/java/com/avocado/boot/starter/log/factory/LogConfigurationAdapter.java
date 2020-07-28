@@ -11,8 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 日志工厂
+ *
  * @author ：qiaoliang
- * @date ：2020-07-16
  */
 public class LogConfigurationAdapter implements ApplicationContextAware,LogConfigurerComposite {
 

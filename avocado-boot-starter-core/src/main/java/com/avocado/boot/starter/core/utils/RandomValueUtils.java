@@ -18,7 +18,6 @@ public class RandomValueUtils extends RandomStringUtils {
      * 封装JDK自带的UUID, 通过Random数字生成, 中间无-分割.
      *
      * @author ：qiaoliang
-
      * @return java.lang.String
      */
     public static String uuid() {
@@ -39,6 +38,7 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 返回Email
      *
+     * @author ：qiaoliang
      * @param min 最小长度
      * @param max 最大长度
      * @return java.lang.String
@@ -54,9 +54,7 @@ public class RandomValueUtils extends RandomStringUtils {
         return sb.toString();
     }
 
-    /**
-     * 返回手机号码
-     */
+    /**返回手机号码**/
     private static String[] telFirst = "134,135,136,137,138,139,150,151,152,157,158,159,130,131,132,155,156,133,153".split(",");
 
     public static String getTel() {
@@ -67,9 +65,7 @@ public class RandomValueUtils extends RandomStringUtils {
         return first + second + third;
     }
 
-    /**
-     * 返回中文姓名
-     */
+    /**返回中文姓名**/
     private static String name_sex = "";
 
     public static String getChineseName() {
@@ -99,6 +95,7 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 返回地址
      *
+     * @author ：qiaoliang
      * @return java.lang.String
      */
     public static String getRoad() {
@@ -112,7 +109,8 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 数据封装
      *
-     * @return Map
+     * @author ：qiaoliang
+     * @return java.util.Map
      */
     public static Map getAddress() {
         Map map = new HashMap();
@@ -129,6 +127,7 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 随机生成车牌号
      *
+     * @author ：qiaoliang
      * @return java.lang.String
      */
     public static String getPlateNumber() {

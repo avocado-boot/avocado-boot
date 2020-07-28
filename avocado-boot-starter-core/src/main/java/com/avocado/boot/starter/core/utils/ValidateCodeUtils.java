@@ -6,47 +6,33 @@ import java.util.Random;
 
 /**
  * 验证码工具类
- *
- * @author ：qiaoliang
  * 可生成数字、大写、小写字母及三者混合类型的验证码。 支持自定义验证码字符数量； 支持自定义验证码图片的大小； 支持自定义需排除的特殊字符；
  * 支持自定义干扰线的数量； 支持自定义验证码图文颜色
+ *
+ * @author ：qiaoliang
  */
 public class ValidateCodeUtils {
     public static final String CAPTCHA_CODE = "captcha";
 
-    /**
-     * 验证码类型为仅数字 0~9
-     */
+    /**验证码类型为仅数字 0~9**/
     public static final int TYPE_NUM_ONLY = 0;
 
-    /**
-     * 验证码类型为仅字母，即大写、小写字母混合
-     */
+    /**验证码类型为仅字母，即大写、小写字母混合**/
     public static final int TYPE_LETTER_ONLY = 1;
 
-    /**
-     * 验证码类型为数字、大写字母、小写字母混合
-     */
+    /**验证码类型为数字、大写字母、小写字母混合**/
     public static final int TYPE_ALL_MIXED = 2;
 
-    /**
-     * 验证码类型为数字、大写字母混合
-     */
+    /**验证码类型为数字、大写字母混合**/
     public static final int TYPE_NUM_UPPER = 3;
 
-    /**
-     * 验证码类型为数字、小写字母混合
-     */
+    /**验证码类型为数字、小写字母混合**/
     public static final int TYPE_NUM_LOWER = 4;
 
-    /**
-     * 验证码类型为仅大写字母
-     */
+    /**验证码类型为仅大写字母**/
     public static final int TYPE_UPPER_ONLY = 5;
 
-    /**
-     * 验证码类型为仅小写字母
-     */
+    /**验证码类型为仅小写字母**/
     public static final int TYPE_LOWER_ONLY = 6;
 
     private ValidateCodeUtils() {
@@ -56,6 +42,7 @@ public class ValidateCodeUtils {
     /**
      * 生成验证码字符串
      *
+     * @author ：qiaoliang
      * @param type    验证码类型，参见本类的静态属性
      * @param length  验证码长度，大于0的整数
      * @param exChars 需排除的特殊字符（仅对数字、字母混合型验证码有效，无需排除则为null）
@@ -165,6 +152,7 @@ public class ValidateCodeUtils {
     /**
      * 已有验证码，生成验证码图片
      *
+     * @author ：qiaoliang
      * @param textCode       文本验证码
      * @param width          图片宽度
      * @param height         图片高度
@@ -236,6 +224,7 @@ public class ValidateCodeUtils {
     /**
      * 生成图片验证码
      *
+     * @author ：qiaoliang
      * @param type           验证码类型，参见本类的静态属性
      * @param length         验证码字符长度，大于0的整数
      * @param exChars        需排除的特殊字符
@@ -261,7 +250,8 @@ public class ValidateCodeUtils {
     /**
      * 产生随机颜色
      *
-     * @return
+     * @author ：qiaoliang
+     * @return java.awt.Color
      */
     private static Color getRandomColor() {
         Random r = new Random();

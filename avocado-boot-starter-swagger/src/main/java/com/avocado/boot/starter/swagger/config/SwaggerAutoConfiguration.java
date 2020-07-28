@@ -1,6 +1,6 @@
-package com.avocado.boot.starter.swagger2.config;
+package com.avocado.boot.starter.swagger.config;
 
-import com.avocado.boot.starter.swagger2.properties.Swagger2Properties;
+import com.avocado.boot.starter.swagger.properties.Swagger2Properties;
 import io.swagger.annotations.Api;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -18,7 +18,6 @@ import springfox.documentation.swagger2.configuration.Swagger2DocumentationConfi
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-22
  */
 @Configuration
 @EnableConfigurationProperties({Swagger2Properties.class})

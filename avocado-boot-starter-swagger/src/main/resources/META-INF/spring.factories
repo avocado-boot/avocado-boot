@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.avocado.boot.starter.swagger2.config.SwaggerAutoConfiguration
+com.avocado.boot.starter.swagger.config.SwaggerAutoConfiguration

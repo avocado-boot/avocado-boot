@@ -25,8 +25,9 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 
 /**
+ * AOP 拦截配置
+ *
  * @author ：qiaoliang
- * @date ：2020-07-16
  */
 @Aspect
 @EnableConfigurationProperties({LogProperties.class})
@@ -56,7 +57,6 @@ public class LogAspect {
      * 方法调用前触发
      *
      * @author qiaoliang
-     * @date 2020-04-16 13:40
      */
     @Before(value = "controllerAspect()")
     public void before(JoinPoint joinPoint) {
@@ -78,7 +78,6 @@ public class LogAspect {
      * 方法调用后触发
      *
      * @author qiaoliang
-     * @date 2020-04-16 13:43
      */
     @AfterReturning(returning = "ret", pointcut = "controllerAspect()")
     public void doAfterReturning(Object ret) {
@@ -91,9 +90,10 @@ public class LogAspect {
     /**
      * 异常通知：
      * 1. 在目标方法非正常结束，发生异常或者抛出异常时执行
-     * 1. 在异常通知中设置异常信息，并将其保存
+     * 2. 在异常通知中设置异常信息，并将其保存
      *
-     * @param exception
+     * @author qiaoliang
+     * @param exception 异常信息
      */
     @AfterThrowing(value = "controllerAspect()", throwing = "exception")
     public void doAfterThrowing(Exception exception) {
@@ -107,6 +107,13 @@ public class LogAspect {
     }
 
 
+    /**
+     * 获取注解信息
+     *
+     * @author ：qiaoliang
+     * @param joinPoint : 请求
+     * @return com.avocado.boot.starter.log.invalid.ControllerLog
+     */
     private ControllerLog getAnnotation(JoinPoint joinPoint){
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         //得到目标方法

@@ -10,8 +10,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 /**
+ * log 初始化配置
+ *
  * @author ：qiaoliang
- * @date ：2020-07-22
  */
 @ComponentScan(basePackages = {
         "com.avocado.boot.starter.log.service"

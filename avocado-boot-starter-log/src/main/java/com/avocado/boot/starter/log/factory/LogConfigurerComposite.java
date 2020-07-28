@@ -4,8 +4,9 @@ import com.avocado.boot.starter.log.service.LogOutput;
 import com.avocado.boot.starter.log.enums.LogLevelType;
 
 /**
+ * 工厂接口
+ *
  * @author ：qiaoliang
- * @date ：2020-07-16
  */
 public interface LogConfigurerComposite {
 

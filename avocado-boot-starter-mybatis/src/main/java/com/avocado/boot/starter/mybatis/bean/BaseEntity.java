@@ -4,7 +4,6 @@ import java.util.Date;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-21
  */
 public class BaseEntity implements java.io.Serializable{
     private Long id;

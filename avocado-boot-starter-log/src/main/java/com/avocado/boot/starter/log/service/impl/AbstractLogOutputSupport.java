@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-16
  */
 public abstract class AbstractLogOutputSupport implements LogOutput {
 

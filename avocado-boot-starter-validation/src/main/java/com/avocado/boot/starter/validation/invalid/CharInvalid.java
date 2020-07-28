@@ -14,15 +14,15 @@ import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * 非法字符串约束
+ * 判断是否是字母
  *
  * @author ：qiaoliang
  */
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
-@Constraint(validatedBy= PatternsInvalidImpl.class)
-public @interface PatternsInvalid {
-    String message() default "存在非法字符串，请重新输入！";
+@Constraint(validatedBy= CharInvalidImpl.class)
+public @interface CharInvalid {
+    String message() default "非字母格式，请重新输入！";
     Class<?>[] groups() default { };
     Class<? extends Payload>[] payload() default { };
 }
