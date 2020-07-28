@@ -8,14 +8,18 @@ import java.util.Random;
 import java.util.UUID;
 
 /**
+ * 随机生成工具
+ *
  * @author ：qiaoliang
- * @description: 随机生成工具
- * @date ：2020-04-30
  */
 public class RandomValueUtils extends RandomStringUtils {
 
     /**
      * 封装JDK自带的UUID, 通过Random数字生成, 中间无-分割.
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String uuid() {
         return UUID.randomUUID().toString().replaceAll("-", "");
@@ -37,7 +41,7 @@ public class RandomValueUtils extends RandomStringUtils {
      *
      * @param min 最小长度
      * @param max 最大长度
-     * @return
+     * @return java.lang.String
      */
     public static String getEmail(int min, int max) {
         int length = getNum(min, max);
@@ -95,7 +99,7 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 返回地址
      *
-     * @return
+     * @return java.lang.String
      */
     public static String getRoad() {
         int index = getNum(0, road.length - 1);
@@ -108,7 +112,7 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 数据封装
      *
-     * @return
+     * @return Map
      */
     public static Map getAddress() {
         Map map = new HashMap();
@@ -125,7 +129,7 @@ public class RandomValueUtils extends RandomStringUtils {
     /**
      * 随机生成车牌号
      *
-     * @return
+     * @return java.lang.String
      */
     public static String getPlateNumber() {
         int index = getNum(0, pAt.length - 1);

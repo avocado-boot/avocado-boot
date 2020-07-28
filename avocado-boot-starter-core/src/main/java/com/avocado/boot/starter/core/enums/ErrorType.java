@@ -6,6 +6,10 @@ public interface ErrorType {
 
   /**
    * 返回code
+   *
+   * @author ：qiaoliang
+
+   * @return int
    */
   default int getCode(){
     return HttpStatus.HTTP_CONFLICT;
@@ -13,6 +17,10 @@ public interface ErrorType {
 
   /**
    * 返回message
+   *
+   * @author ：qiaoliang
+
+   * @return java.lang.String
    */
   String getMessage();
 

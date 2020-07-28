@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-16
  */
 public class RegexUtils {
 
@@ -119,13 +118,10 @@ public class RegexUtils {
     }
 
     /**
-     * <pre>
      * 获取网址 URL 的一级域名
-     * http://detail.tmall.com/item.htm?spm=a230r.1.10.44.1xpDSH&id=15453106243&_u=f4ve1uq1092 ->> tmall.com
-     * </pre>
      *
-     * @param url
-     * @return
+     * @param url 地址
+     * @return 域名
      */
     public static String getDomain(String url) {
         Pattern p = Pattern.compile("(?<=http://|\\.)[^.]*?\\.(com|cn|net|org|biz|info|cc|tv)", Pattern.CASE_INSENSITIVE);
@@ -158,12 +154,11 @@ public class RegexUtils {
     /**
      * 判断字符串是否符合正则表达式
      *
-     * @author : chenssy
-     * @date : 2016年6月1日 下午12:43:05
+     * @author : qiaoliang
      *
-     * @param str
-     * @param regex
-     * @return
+     * @param str 字符串
+     * @param regex 正则表达式
+     * @return Boolean
      */
     public static boolean find(String str, String regex) {
         Pattern p = Pattern.compile(regex);
@@ -174,9 +169,6 @@ public class RegexUtils {
 
     /**
      * 判断输入的字符串是否符合Email格式.
-     * @autor:chenssy
-     * @date:2014年8月7日
-     *
      * @param email
      * 				传入的字符串
      * @return 符合Email格式返回true，否则返回false
@@ -191,12 +183,10 @@ public class RegexUtils {
 
     /**
      * 判断输入的字符串是否为纯汉字
-     * @autor:chenssy
-     * @date:2014年8月7日
      *
      * @param value
      * 				传入的字符串
-     * @return
+     * @return boolean
      */
     public static boolean isChinese(String value) {
         Pattern pattern = Pattern.compile("[\u0391-\uFFE5]+$");
@@ -205,12 +195,10 @@ public class RegexUtils {
 
     /**
      * 判断是否为浮点数，包括double和float
-     * @autor:chenssy
-     * @date:2014年8月7日
      *
      * @param value
      * 			传入的字符串
-     * @return
+     * @return boolean
      */
     public static boolean isDouble(String value) {
         Pattern pattern = Pattern.compile("^[-\\+]?\\d+\\.\\d+$");
@@ -219,12 +207,10 @@ public class RegexUtils {
 
     /**
      * 判断是否为整数
-     * @autor:chenssy
-     * @date:2014年8月7日
      *
-     * @param value
-     * 			传入的字符串
-     * @retur
+     * @author ：qiaoliang
+     * @param value : 字符串
+     * @return boolean
      */
     public static boolean isInteger(String value) {
         Pattern pattern = Pattern.compile("^[-\\+]?[\\d]+$");
@@ -233,8 +219,8 @@ public class RegexUtils {
 
     /**
      * 判断是否是字母
-     * @param value
-     * @return
+     * @param value 字符串
+     * @return boolean
      */
     public static boolean checkChar(String value) {
         Pattern pattern = Pattern.compile("[a-z|A-Z]+");

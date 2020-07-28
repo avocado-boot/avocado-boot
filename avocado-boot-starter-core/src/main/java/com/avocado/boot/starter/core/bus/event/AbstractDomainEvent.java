@@ -4,7 +4,6 @@ import java.util.Date;
 
 /**
  * @author ：qiaoliang
- * @date ：2020-06-27
  */
 public class AbstractDomainEvent {
     /**

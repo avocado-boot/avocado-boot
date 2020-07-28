@@ -10,9 +10,9 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
+ * 日期工具类
+ *
  * @author ：qiaoliang
- * @description: 日期工具类
- * @date ：2020-04-30
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
@@ -37,6 +37,8 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      * "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
      * "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM",
      * "yyyyMMdd", "yyyyMMddHHmmss", "yyyyMMddHHmm", "yyyyMM"}
+     * @param str 日期
+     * @return date
      */
     public static Date parseDate(String str) {
         if (str == null) {
@@ -51,6 +53,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前日期字符串 格式（yyyy-MM-dd）
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatCurrentDate() {
         return formatCurrentDate("yyyy-MM-dd");
@@ -58,6 +64,8 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前日期字符串 格式（yyyy-MM-dd） pattern可以为："yyyy-MM-dd" "HH:mm:ss" "E"
+     * @param pattern 格式
+     * @return 当前日期字符串
      */
     public static String formatCurrentDate(String pattern) {
         return DateFormatUtils.format(new Date(), pattern);
@@ -65,6 +73,11 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到日期字符串 默认格式（yyyy-MM-dd） pattern可以为："yyyy-MM-dd" "HH:mm:ss" "E"
+     *
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @param pattern : 格式
+     * @return java.lang.String
      */
     public static String formatDate(Date date, String pattern) {
         String formatDate = null;
@@ -90,7 +103,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取当前时间戳（yyyyMMddHHmmss）
      *
-     * @return
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String getCurrentTimestampStr() {
         return formatDate(new Date(), "yyyyMMddHHmmss");
@@ -99,7 +114,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取Unix时间戳
      *
-     * @return
+     * @author ：qiaoliang
+
+     * @return long
      */
     public static long getCurrentUnixTimestamp() {
         long nowTimeStamp = System.currentTimeMillis() / 1000;
@@ -109,7 +126,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取Unix时间戳
      *
-     * @return
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String getCurrentUnixTimestampStr() {
         return String.valueOf(getCurrentUnixTimestamp());
@@ -118,7 +137,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 转换Unix时间戳
      *
-     * @return nowTimeStamp
+     * @author ：qiaoliang
+     * @param time : 时间戳
+     * @return long
      */
     public static long parseUnixTimeStamp(long time) {
         return time / ONE_MILLIS;
@@ -127,8 +148,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一周
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getBeforeWeek(Date date) {
         return getAddDate(date, Calendar.WEEK_OF_YEAR, -1);
@@ -137,8 +159,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一天
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getBeforeDay(Date date) {
         return getAddDate(date, Calendar.DAY_OF_YEAR, -1);
@@ -147,8 +170,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一月
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getBeforeMouth(Date date) {
         return getAddDate(date, Calendar.MONTH, -1);
@@ -157,8 +181,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一年
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getBeforeYear(Date date) {
         return getAddDate(date, Calendar.YEAR, -1);
@@ -168,8 +193,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一周
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getAfterWeek(Date date) {
         return getAddDate(date, Calendar.WEEK_OF_YEAR, 1);
@@ -178,8 +204,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一天
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getAfterDay(Date date) {
         return getAddDate(date, Calendar.DAY_OF_YEAR, 1);
@@ -188,8 +215,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一月
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getAfterMouth(Date date) {
         return getAddDate(date, Calendar.MONTH, 1);
@@ -198,8 +226,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取前一年
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.util.Date
      */
     public static Date getAfterYear(Date date) {
         return getAddDate(date, Calendar.YEAR, 1);
@@ -209,10 +238,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 增加日期
      *
-     * @param date
+     * @param date 时间
      * @param field  Calendar.MONTH,Calendar.DAY_OF_YEAR
      * @param amount 正数为将来时间, 负数为过去时间
-     * @return
+     * @return 增加后的日期
      */
     public static Date getAddDate(Date date, int field, int amount) {
         Calendar cl = Calendar.getInstance();
@@ -224,6 +253,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到日期时间字符串，转换格式（yyyy-MM-dd HH:mm:ss）
+     *
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.lang.String
      */
     public static String formatDateTime(Date date) {
         return formatDate(date, "yyyy-MM-dd HH:mm:ss");
@@ -231,6 +264,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前时间字符串 格式（HH:mm:ss）
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatTime() {
         return formatDate(new Date(), "HH:mm:ss");
@@ -238,6 +275,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前日期和时间字符串 格式（yyyy-MM-dd HH:mm:ss）
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatCurrentDateTime() {
         return formatDate(new Date(), "yyyy-MM-dd HH:mm:ss");
@@ -245,6 +286,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前年份字符串 格式（yyyy）
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatYear() {
         return formatDate(new Date(), "yyyy");
@@ -252,6 +297,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前月份字符串 格式（MM）
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatMonth() {
         return formatDate(new Date(), "MM");
@@ -259,6 +308,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当天字符串 格式（dd）
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatDay() {
         return formatDate(new Date(), "dd");
@@ -266,6 +319,10 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
 
     /**
      * 得到当前星期字符串 格式（E）星期几
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
      */
     public static String formatWeek() {
         return formatDate(new Date(), "E");
@@ -274,8 +331,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取过去的天数
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return long
      */
     public static long getBeforeDays(Date date) {
         long t = System.currentTimeMillis() - date.getTime();
@@ -285,8 +343,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取过去的小时
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return long
      */
     public static long getBeforeHours(Date date) {
         long t = System.currentTimeMillis() - date.getTime();
@@ -296,8 +355,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取过去的分钟
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return long
      */
     public static long getBeforeMinutes(Date date) {
         long t = System.currentTimeMillis() - date.getTime();
@@ -307,8 +367,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 获取过去的秒
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return long
      */
     public static long getBeforeSeconds(Date date) {
         long t = System.currentTimeMillis() - date.getTime();
@@ -316,11 +377,12 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     }
 
     /**
-     * 获取两个日期之间的天数
+     *  获取两个日期之间的天数
      *
-     * @param before
-     * @param after
-     * @return
+     * @author ：qiaoliang
+     * @param before : 开始时间
+     * @param after : 结束时间
+     * @return double
      */
     public static double getDays(Date before, Date after) {
         long beforeTime = before.getTime();
@@ -332,8 +394,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 距离今天多久
      *
-     * @param createAt
-     * @return
+     * @author ：qiaoliang
+     * @param createAt : 时间
+     * @return java.lang.String
      */
     public static String formatTextFromtoday(Date createAt) {
         // 定义最终返回的结果字符串。
@@ -386,8 +449,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
     /**
      * 距离截止日期还有多长时间
      *
-     * @param date
-     * @return
+     * @author ：qiaoliang
+     * @param date : 时间
+     * @return java.lang.String
      */
     public static String formatTextFromDeadline(Date date) {
         long deadline = date.getTime() / ONE_MILLIS;
@@ -429,7 +493,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils{
      *
      * @param dateStr 字符串日期
      * @param pattern 如：yyyy-MM-dd HH:mm:ss
-     * @return
+     * @return 字符串
      */
     public static String date2UnixTimeStamp(String dateStr, String pattern) {
         try {

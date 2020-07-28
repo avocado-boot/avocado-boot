@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
-        <groupId>com.avocado.boot</groupId>
-        <version>1.0.0</version>
+        <groupId>com.github.gitqiao</groupId>
+        <version>0.0.1</version>
     </parent>
     <name>avocado-boot-starter-validation</name>
     <artifactId>avocado-boot-starter-validation</artifactId>
-    <version>1.0.0</version>
-    <description>验证工具包</description>
+    <version>0.0.1</version>
+    <description>Avocado Boot Validation</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <organization>
         <name>Avocado Personal Tailor.</name>
@@ -51,10 +51,4 @@
             <artifactId>avocado-boot-starter-core</artifactId>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <repository>
-            <id>avocado-maven-repository</id>
-            <url>file:../repository</url>
-        </repository>
-    </distributionManagement>
 </project>

@@ -12,7 +12,6 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * Guava事件发布器实现
  *
  * @author ：qiaoliang
- * @date ：2020-06-27
  */
 public abstract class AbstractGuavaDomainEventPublisher implements DomainEventPublisher {
 

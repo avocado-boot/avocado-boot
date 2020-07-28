@@ -5,11 +5,11 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
+ * 验证码工具类
+ *
  * @author ：qiaoliang
- * @description: 验证码工具类。
  * 可生成数字、大写、小写字母及三者混合类型的验证码。 支持自定义验证码字符数量； 支持自定义验证码图片的大小； 支持自定义需排除的特殊字符；
  * 支持自定义干扰线的数量； 支持自定义验证码图文颜色
- * @date ：2020-04-30
  */
 public class ValidateCodeUtils {
     public static final String CAPTCHA_CODE = "captcha";

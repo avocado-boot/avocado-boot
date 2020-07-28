@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
-        <groupId>com.avocado.boot</groupId>
-        <version>1.0.0</version>
+        <groupId>com.github.gitqiao</groupId>
+        <version>0.0.1</version>
     </parent>
     <name>avocado-boot-starter-core</name>
     <artifactId>avocado-boot-starter-core</artifactId>
-    <version>1.0.0</version>
-    <description>核心工具包</description>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+    <description>Avocado Boot Core package</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <organization>
         <name>Avocado Personal Tailor.</name>
@@ -66,10 +67,4 @@
             <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <repository>
-            <id>avocado-maven-repository</id>
-            <url>file:../repository</url>
-        </repository>
-    </distributionManagement>
 </project>

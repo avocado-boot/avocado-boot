@@ -12,7 +12,6 @@ import java.util.Objects;
  * 自定义业务异常
  *
  * @author qiaoliang
- * @date 2019/8/23 13:57
  */
 public class BusinessException extends RuntimeException {
 

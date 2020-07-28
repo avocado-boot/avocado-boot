@@ -14,9 +14,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * 字符串工具类, 继承org.apache.commons.lang3.StringUtils类
+ *
  * @author ：qiaoliang
- * @description: 字符串工具类, 继承org.apache.commons.lang3.StringUtils类
- * @date ：2020-04-30
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
@@ -26,8 +26,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 转换为字节数组
      *
-     * @param str
-     * @return
+     * @author ：qiaoliang
+     * @param str : 字符串
+     * @return byte[]
      */
     public static byte[] getBytes(String str) {
         if (str != null) {
@@ -44,7 +45,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 转换为字节数组
      *
-     * @return
+     * @author ：qiaoliang
+     * @param bytes : 字节数组
+     * @return java.lang.String
      */
     public static String toString(byte[] bytes) {
         try {
@@ -57,6 +60,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 转换为Boolean类型
      * 'true', 'on', 'y', 't', 'yes' or '1' (case insensitive) will return true. Otherwise, false is returned.
+     * @author ：qiaoliang
+     * @param val : 字符串
+     * @return java.lang.Boolean
      */
     public static Boolean toBoolean(final Object val) {
         if (val == null) {
@@ -70,9 +76,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 如果对象为空，则使用defaultVal值
      * see: ObjectUtils.toString(obj, defaultVal)
      *
-     * @param obj
-     * @param defaultVal
-     * @return
+     * @param obj 参数
+     * @param defaultVal 默认值
+     * @return 字符串
      */
     public static String toString(final Object obj, final String defaultVal) {
         return obj == null ? defaultVal : obj.toString();
@@ -98,6 +104,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 转换为Double类型
+     *
+     * @author ：qiaoliang
+     * @param val : 参数
+     * @return java.lang.Double
      */
     public static Double toDouble(Object val) {
         if (val == null) {
@@ -112,6 +122,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 转换为Float类型
+     *
+     * @author ：qiaoliang
+     * @param val : 参数
+     * @return java.lang.Float
      */
     public static Float toFloat(Object val) {
         return toDouble(val).floatValue();
@@ -119,6 +133,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 转换为Long类型
+     *
+     * @author ：qiaoliang
+     * @param val :参数
+     * @return java.lang.Long
      */
     public static Long toLong(Object val) {
         return toDouble(val).longValue();
@@ -126,6 +144,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 转换为Integer类型
+     *
+     * @author ：qiaoliang
+     * @param val : 参数
+     * @return java.lang.Integer
      */
     public static Integer toInteger(Object val) {
         return toLong(val).intValue();
@@ -136,7 +158,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      *
      * @param str    目标字符串
      * @param length 截取长度
-     * @return
+     * @return 字符串
      */
     public static String ellipsis(String str, int length) {
         if (str == null) {
@@ -163,6 +185,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 替换掉HTML标签方法
+     *
+     * @author ：qiaoliang
+     * @param html : html
+     * @return java.lang.String
      */
     public static String replaceHtml(String html) {
         if (isBlank(html)) {
@@ -177,6 +203,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * Html 转码.
+     *
+     * @author ：qiaoliang
+     * @param html : Html
+     * @return java.lang.String
      */
     public static String escapeHtml(String html) {
         return StringEscapeUtils.escapeHtml4(html);
@@ -184,6 +214,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * Html 解码.
+     *
+     * @author ：qiaoliang
+     * @param htmlEscaped : Html
+     * @return java.lang.String
      */
     public static String unescapeHtml(String htmlEscaped) {
         return StringEscapeUtils.unescapeHtml4(htmlEscaped);
@@ -191,6 +225,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * Xml 转码.
+     *
+     * @author ：qiaoliang
+     * @param xml : Xml
+     * @return java.lang.String
      */
     public static String escapeXml(String xml) {
         return StringEscapeUtils.escapeXml11(xml);
@@ -198,6 +236,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * Xml 解码.
+     *
+     * @author ：qiaoliang
+     * @param xmlEscaped : Xml
+     * @return java.lang.String
      */
     public static String unescapeXml(String xmlEscaped) {
         return StringEscapeUtils.unescapeXml(xmlEscaped);
@@ -206,10 +248,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 驼峰转下划线
-     * createTime > create_time
      *
-     * @param param
-     * @return
+     * @param param 参数
+     * @return java.lang.String
      */
     public static String camelToUnderline(String param) {
         if (param == null || "".equals(param.trim())) {
@@ -231,10 +272,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 下划线转驼峰
-     * create_time > createTime
-     *
-     * @param param
-     * @return
+     * @param param 参数
+     * @return java.lang.String
      */
     public static String underlineToCamel(String param) {
         if (param == null || "".equals(param.trim())) {
@@ -254,7 +293,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 格式化存储单位
      *
      * @param size byte 字节
-     * @return
+     * @return java.lang.String
      */
     public static String formatBytes(long size) {
         // 如果字节数少于1024，则直接以B为单位，否则先除于1024，后3位因太少无意义
@@ -283,7 +322,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 匿名手机号
      *
-     * @param mobile
+     * @param mobile 手机号
      * @return 152****4799
      */
     public static String formatMobile(String mobile) {
@@ -297,8 +336,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 匿名银行卡号
      *
-     * @param bankCard
-     * @return
+     * @param bankCard 银行卡
+     * @return java.lang.String
      */
     public static String formatBankCard(String bankCard) {
         if (isEmpty(bankCard)) {
@@ -310,7 +349,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 匿名身份证
      *
-     * @param idCard
+     * @param idCard 身份证
      * @return 4304*****7733
      */
     public static String formatIdCard(String idCard) {
@@ -336,8 +375,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 移动：1703、1705、1706
      * 联通：1704、1707、1708、1709、171
      *
-     * @param mobile
-     * @return
+     * @param mobile 手机号
+     * @return boolean
      */
     public static boolean matchMobile(String mobile) {
         if (mobile == null) {
@@ -350,8 +389,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 检测Email
      *
-     * @param email
-     * @return
+     * @author ：qiaoliang
+     * @param email : Email
+     * @return boolean
      */
     public static boolean matchEmail(String email) {
         if (email == null) {
@@ -364,8 +404,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 检测域名
-     * @param domain
-     * @return
+     *
+     * @author ：qiaoliang
+     * @param domain : 域名
+     * @return boolean
      */
     public static boolean matchDomain(String domain) {
         if (domain == null) {
@@ -377,8 +419,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 检测IP
-     * @param ip
-     * @return
+     *
+     * @author ：qiaoliang
+     * @param ip : ip
+     * @return boolean
      */
     public static boolean matchIp(String ip) {
         if (ip == null) {
@@ -390,8 +434,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 检测HttpUrl
-     * @param url
-     * @return
+     *
+     * @author ：qiaoliang
+     * @param url : url
+     * @return boolean
      */
     public static boolean matchHttpUrl(String url) {
         if (url == null) {
@@ -407,6 +453,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 1、从卡号最后一位数字开始，逆向将奇数位(1、3、5等等)相加。
      * 2、从卡号最后一位数字开始，逆向将偶数位数字，先乘以2（如果乘积为两位数，将个位十位数字相加，即将其减去9），再求和。
      * 3、将奇数位总和加上偶数位总和，结果应该可以被10整除。
+     *
+     * @author ：qiaoliang
+     * @param bankCard : 银行卡卡号
+     * @return boolean
      */
     public static boolean matchBankCard(String bankCard) {
         if (bankCard == null) {
@@ -425,8 +475,9 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 从不含校验位的银行卡卡号采用 Luhm 校验算法获得校验位
      *
-     * @param nonCheckCodeBankCard
-     * @return
+     * @author ：qiaoliang
+     * @param nonCheckCodeBankCard : 银行卡卡号
+     * @return char
      */
     public static char getBankCardCheckCode(String nonCheckCodeBankCard) {
         if (nonCheckCodeBankCard == null || nonCheckCodeBankCard.trim().length() == 0
@@ -507,6 +558,8 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 密码强度
      *
+     * @author ：qiaoliang
+     * @param passwordStr :
      * @return Z = 字母 S = 数字 T = 特殊字符
      */
     public static String checkPassword(String passwordStr) {
@@ -545,6 +598,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 将 Exception 转化为 String
+     *
+     * @author ：qiaoliang
+     * @param e : Exception
+     * @return java.lang.String
      */
     public static String getExceptionToString(Throwable e) {
         if (e == null){
