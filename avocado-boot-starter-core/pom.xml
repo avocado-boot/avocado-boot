@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </parent>
     <name>avocado-boot-starter-core</name>
     <artifactId>avocado-boot-starter-core</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <description>Avocado Boot Core package</description>
     <url>https://github.com/gitQiao/avocado-boot</url>

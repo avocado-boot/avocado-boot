@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </parent>
     <name>avocado-boot-starter-validation</name>
     <artifactId>avocado-boot-starter-validation</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>Avocado Boot Validation</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <organization>
@@ -47,7 +47,7 @@
         </dependency>
         <!-- 核心包 -->
         <dependency>
-            <groupId>com.avocado.boot</groupId>
+            <groupId>com.github.gitqiao</groupId>
             <artifactId>avocado-boot-starter-core</artifactId>
         </dependency>
     </dependencies>
