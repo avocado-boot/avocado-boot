@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.2</version>
+        <version>0.0.3</version>
     </parent>
     <name>avocado-boot-starter-log</name>
     <artifactId>avocado-boot-starter-log</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <description>Avocado Boot System log dependency</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <organization>

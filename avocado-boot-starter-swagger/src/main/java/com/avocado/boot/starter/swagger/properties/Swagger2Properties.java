@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * @author ：qiaoliang
  */
-@ConfigurationProperties(prefix = "avocado.swagger")
+@ConfigurationProperties(prefix = "swagger")
 public class Swagger2Properties {
     /**是否启用swagger,生产环境建议关闭**/
     private boolean enabled = false;
