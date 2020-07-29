@@ -3,16 +3,49 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>avocado-boot-starter-parent</artifactId>
-        <groupId>com.github.gitqiao</groupId>
-        <version>0.0.2</version>
-    </parent>
+    <groupId>com.github.gitqiao</groupId>
     <name>avocado-boot-starter-validation</name>
     <artifactId>avocado-boot-starter-validation</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.4</version>
     <description>Avocado Boot Validation</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
+    <!-- 依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.3.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.gitqiao</groupId>
+                <artifactId>avocado-boot-dependencies</artifactId>
+                <version>0.0.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!--spring-boot-starter-web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--spring-boot-starter-validation-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <!-- 核心包 -->
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-core</artifactId>
+        </dependency>
+    </dependencies>
     <organization>
         <name>Avocado Personal Tailor.</name>
         <url>https://github.com/gitQiao</url>
@@ -34,21 +67,4 @@
         <system>GitHub</system>
         <url>https://github.com/gitQiao/avocado-boot/issues</url>
     </issueManagement>
-    <dependencies>
-        <!--spring-boot-starter-web-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!--spring-boot-starter-validation-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <!-- 核心包 -->
-        <dependency>
-            <groupId>com.github.gitqiao</groupId>
-            <artifactId>avocado-boot-starter-core</artifactId>
-        </dependency>
-    </dependencies>
 </project>

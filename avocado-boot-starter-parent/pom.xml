@@ -11,7 +11,7 @@
     <groupId>com.github.gitqiao</groupId>
     <name>avocado-boot-starter-parent</name>
     <artifactId>avocado-boot-starter-parent</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
     <description>Avocado Boot Parent</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
@@ -48,7 +48,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <!-- Avocado Boot -->
-        <avocado-boot-dependencies.version>0.0.3</avocado-boot-dependencies.version>
+        <avocado-boot-dependencies.version>0.0.4</avocado-boot-dependencies.version>
     </properties>
 
     <!-- 依赖管理 -->

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.avocado.boot.starter.security.config.SecurityAutoConfiguration,\
+com.avocado.boot.starter.security.config.WebMvcConfiguration

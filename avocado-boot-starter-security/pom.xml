@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.gitqiao</groupId>
-    <name>avocado-boot-starter-mybatis</name>
-    <artifactId>avocado-boot-starter-mybatis</artifactId>
+    <name>avocado-boot-starter-security</name>
+    <artifactId>avocado-boot-starter-security</artifactId>
     <version>0.0.4</version>
-    <description>Avocado Boot Mybatis-Plus</description>
+    <description>Avocado Boot Security</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <!-- 依赖管理 -->
     <dependencyManagement>
@@ -30,10 +30,31 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <!-- mybatis plus -->
+        <!-- spring boot web -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot aop -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- spring boot配置文件提示 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- jwt -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+        </dependency>
+        <!-- 核心依赖 -->
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-core</artifactId>
         </dependency>
     </dependencies>
     <organization>
@@ -42,7 +63,7 @@
     </organization>
     <developers>
         <developer>
-            <name>qiaoliang</name>
+            <name>gitQiao</name>
             <email>1224999091@qq.com</email>
             <organization>Avocado Personal Tailor.</organization>
             <organizationUrl>https://github.com/gitQiao</organizationUrl>

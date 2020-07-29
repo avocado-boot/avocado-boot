@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.gitqiao</groupId>
     <artifactId>avocado-boot-dependencies</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>avocado-boot-dependencies</name>
     <packaging>pom</packaging>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <description>Avocado Boot Dependencies</description>
-
     <organization>
         <name>Avocado Personal Tailor.</name>
         <url>https://github.com/gitQiao</url>
@@ -42,6 +41,8 @@
     </licenses>
     <!-- Jar 版本控制 -->
     <properties>
+        <!-- Java版本 -->
+        <java.version>1.8</java.version>
         <!-- Hutool -->
         <cn.hutool.version>4.6.17</cn.hutool.version>
         <!-- mybatis-plus -->
@@ -53,19 +54,21 @@
         <!-- aliyun短信 -->
         <com.aliyun.core.version>4.1.0</com.aliyun.core.version>
         <!-- Avocado Boot Core -->
-        <avocado-boot-core.version>0.0.2</avocado-boot-core.version>
+        <avocado-boot-core.version>0.0.4</avocado-boot-core.version>
         <!-- Avocado Boot Log -->
-        <avocado-boot-log.version>0.0.3</avocado-boot-log.version>
+        <avocado-boot-log.version>0.0.4</avocado-boot-log.version>
         <!-- Avocado Boot Redis -->
-        <avocado-boot-redis.version>0.0.2</avocado-boot-redis.version>
+        <avocado-boot-redis.version>0.0.4</avocado-boot-redis.version>
         <!-- Avocado Boot Validation -->
-        <avocado-boot-validation.version>0.0.2</avocado-boot-validation.version>
+        <avocado-boot-validation.version>0.0.4</avocado-boot-validation.version>
         <!-- Avocado Boot Mybatis -->
-        <avocado-boot-mybatis.version>0.0.2</avocado-boot-mybatis.version>
+        <avocado-boot-mybatis.version>0.0.4</avocado-boot-mybatis.version>
         <!-- Avocado Boot Bus -->
-        <avocado-boot-bus.version>0.0.2</avocado-boot-bus.version>
+        <avocado-boot-bus.version>0.0.4</avocado-boot-bus.version>
         <!-- Avocado Boot Swagger -->
-        <avocado-boot-swagger.version>0.0.3</avocado-boot-swagger.version>
+        <avocado-boot-swagger.version>0.0.4</avocado-boot-swagger.version>
+        <!-- Avocado Boot Security -->
+        <avocado-boot-security.version>0.0.4</avocado-boot-security.version>
         <!-- swagger2 -->
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <!-- swagger2-ui -->
@@ -112,6 +115,12 @@
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-mybatis</artifactId>
                 <version>${avocado-boot-mybatis.version}</version>
+            </dependency>
+            <!-- Avocado Boot Security -->
+            <dependency>
+                <groupId>com.github.gitqiao</groupId>
+                <artifactId>avocado-boot-starter-security</artifactId>
+                <version>${avocado-boot-security.version}</version>
             </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>

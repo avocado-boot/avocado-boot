@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "security.issuer",
+      "type": "java.lang.String",
+      "description": "颁发者."
+    },
+    {
+      "name": "security.cert",
+      "type": "java.lang.String",
+      "description": "凭证信息."
+    },
+    {
+      "name": "security.time",
+      "type": "java.lang.Long",
+      "defaultValue": "1000 * 60 * 60 * 24",
+      "description": "访问令牌有效期为1天."
+    }
+  ] }

@@ -3,37 +3,32 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>avocado-boot-starter-parent</artifactId>
-        <groupId>com.github.gitqiao</groupId>
-        <version>0.0.3</version>
-    </parent>
+    <groupId>com.github.gitqiao</groupId>
     <name>avocado-boot-starter-swagger</name>
     <artifactId>avocado-boot-starter-swagger</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <description>Avocado Boot Swagger</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
-    <organization>
-        <name>Avocado Personal Tailor.</name>
-        <url>https://github.com/gitQiao</url>
-    </organization>
-    <developers>
-        <developer>
-            <name>qiaoliang</name>
-            <email>1224999091@qq.com</email>
-            <organization>Avocado Personal Tailor.</organization>
-            <organizationUrl>https://github.com/gitQiao</organizationUrl>
-        </developer>
-    </developers>
-    <scm>
-        <connection>scm:git:git://github.com/gitQiao/avocado-boot</connection>
-        <developerConnection>scm:git:ssh://git@github.com/gitQiao/avocado-boot.git</developerConnection>
-        <url>https://github.com/gitQiao/avocado-boot</url>
-    </scm>
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/gitQiao/avocado-boot/issues</url>
-    </issueManagement>
+    <!-- 依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.3.1.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.gitqiao</groupId>
+                <artifactId>avocado-boot-dependencies</artifactId>
+                <version>0.0.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!--spring-boot-starter-web-->
         <dependency>
@@ -56,4 +51,25 @@
             <artifactId>swagger-bootstrap-ui</artifactId>
         </dependency>
     </dependencies>
+    <organization>
+        <name>Avocado Personal Tailor.</name>
+        <url>https://github.com/gitQiao</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>qiaoliang</name>
+            <email>1224999091@qq.com</email>
+            <organization>Avocado Personal Tailor.</organization>
+            <organizationUrl>https://github.com/gitQiao</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/gitQiao/avocado-boot</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gitQiao/avocado-boot.git</developerConnection>
+        <url>https://github.com/gitQiao/avocado-boot</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/gitQiao/avocado-boot/issues</url>
+    </issueManagement>
 </project>
