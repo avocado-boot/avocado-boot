@@ -4,7 +4,7 @@ import com.avocado.boot.starter.core.exception.BusinessException;
 import com.avocado.boot.starter.oauth.application.dto.OauthParameter;
 import com.avocado.boot.starter.oauth.domain.OauthClient;
 import com.avocado.boot.starter.oauth.domain.UserDetails;
-import com.avocado.boot.starter.oauth.domain.repository.OauthClientRepository;
+import com.avocado.boot.starter.oauth.domain.repository.IOauthClientRepository;
 import com.avocado.boot.starter.oauth.domain.service.IUserDetailsService;
 import com.avocado.boot.starter.oauth.infrastructure.enums.GrantType;
 import com.avocado.boot.starter.oauth.domain.service.IGrantService;
@@ -25,25 +25,26 @@ import static com.avocado.boot.starter.oauth.infrastructure.enums.OauthErrorType
 @Component
 public class PasswordIGrantService implements IGrantService {
 
-    private final IUserDetailsService IUserDetailsService;
-    private final OauthClientRepository oauthClientRepository;
+    private final IUserDetailsService userDetailsService;
+    private final IOauthClientRepository oauthClientRepository;
 
-    public PasswordIGrantService(IUserDetailsService IUserDetailsService,
-                                 OauthClientRepository oauthClientRepository) {
-        this.IUserDetailsService = IUserDetailsService;
+    public PasswordIGrantService(IUserDetailsService userDetailsService,
+                                 IOauthClientRepository oauthClientRepository) {
+        this.userDetailsService = userDetailsService;
         this.oauthClientRepository = oauthClientRepository;
     }
 
     @Override
     public Authentication grant(OauthParameter parameter) {
         // 校验客户端信息
-        OauthClient oauthClient = oauthClientRepository.getById(parameter.getClientId());
+        OauthClient oauthClient = oauthClientRepository.selectByClientIdAndGrantType(parameter.getClientId()
+                ,parameter.getGrantType());
         BusinessException.isNull(oauthClient,INVALID_CLIENT_ID_ERROR);
         oauthClient.checkClientId(parameter.getClientId());
         oauthClient.checkClientSecret(parameter.getClientSecret());
 
         // 校验用户信息
-        UserDetails userDetails = IUserDetailsService.loadUserByUsername(parameter.getUsername());
+        UserDetails userDetails = userDetailsService.loadUserByUsername(parameter.getUsername());
         BusinessException.isFalse(userDetails.getPassword()
                 .equals(DigestUtils.md5DigestAsHex(userDetails.getPassword().getBytes())),PASSWORD_ERROR);
         BusinessException.isTrue(userDetails.isEnabled(),NON_ENABLE_ERROR);

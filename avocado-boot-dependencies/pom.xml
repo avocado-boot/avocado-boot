@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.gitqiao</groupId>
     <artifactId>avocado-boot-dependencies</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <name>avocado-boot-dependencies</name>
     <packaging>pom</packaging>
     <url>https://github.com/gitQiao/avocado-boot</url>
@@ -54,23 +54,19 @@
         <!-- aliyun短信 -->
         <com.aliyun.core.version>4.1.0</com.aliyun.core.version>
         <!-- Avocado Boot Core -->
-        <avocado-boot-core.version>0.0.4</avocado-boot-core.version>
+        <avocado-boot-core.version>0.0.5</avocado-boot-core.version>
         <!-- Avocado Boot Log -->
-        <avocado-boot-log.version>0.0.4</avocado-boot-log.version>
+        <avocado-boot-log.version>0.0.5</avocado-boot-log.version>
         <!-- Avocado Boot Redis -->
         <avocado-boot-redis.version>0.0.4</avocado-boot-redis.version>
-        <!-- Avocado Boot Validation -->
-        <avocado-boot-validation.version>0.0.4</avocado-boot-validation.version>
         <!-- Avocado Boot Mybatis -->
-        <avocado-boot-mybatis.version>0.0.4</avocado-boot-mybatis.version>
-        <!-- Avocado Boot Bus -->
-        <avocado-boot-bus.version>0.0.4</avocado-boot-bus.version>
+        <avocado-boot-mybatis.version>0.0.5</avocado-boot-mybatis.version>
         <!-- Avocado Boot Swagger -->
         <avocado-boot-swagger.version>0.0.4</avocado-boot-swagger.version>
         <!-- Avocado Boot Security -->
-        <avocado-boot-security.version>0.0.5</avocado-boot-security.version>
+        <avocado-boot-security.version>0.0.6</avocado-boot-security.version>
         <!-- Avocado Boot Oauth -->
-        <avocado-boot-oauth.version>0.0.1</avocado-boot-oauth.version>
+        <avocado-boot-oauth.version>0.0.2</avocado-boot-oauth.version>
         <!-- swagger2 -->
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <!-- swagger2-ui -->
@@ -99,12 +95,6 @@
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-redis</artifactId>
                 <version>${avocado-boot-redis.version}</version>
-            </dependency>
-            <!-- Avocado Boot Validation -->
-            <dependency>
-                <groupId>com.github.gitqiao</groupId>
-                <artifactId>avocado-boot-starter-validation</artifactId>
-                <version>${avocado-boot-validation.version}</version>
             </dependency>
             <!-- Avocado Boot Swagger2 -->
             <dependency>

@@ -4,7 +4,7 @@ import com.avocado.boot.starter.core.exception.BusinessException;
 import com.avocado.boot.starter.oauth.application.dto.OauthParameter;
 import com.avocado.boot.starter.oauth.domain.GrantFactory;
 import com.avocado.boot.starter.oauth.domain.OauthClient;
-import com.avocado.boot.starter.oauth.domain.repository.OauthClientRepository;
+import com.avocado.boot.starter.oauth.domain.repository.IOauthClientRepository;
 import com.avocado.boot.starter.oauth.domain.service.IGrantCodeService;
 import com.avocado.boot.starter.security.bean.AccessToken;
 import com.avocado.boot.starter.security.bean.Authentication;
@@ -29,11 +29,11 @@ public class OauthLoginManager {
     private ISecurityService securityService;
     private final IGrantCodeService grantCodeService;
     private final GrantFactory grantFactory;
-    private final OauthClientRepository oauthClientRepository;
+    private final IOauthClientRepository oauthClientRepository;
 
     public OauthLoginManager(IGrantCodeService grantCodeService,
                              GrantFactory grantFactory,
-                             OauthClientRepository oauthClientRepository) {
+                             IOauthClientRepository oauthClientRepository) {
         this.grantCodeService = grantCodeService;
         this.grantFactory = grantFactory;
         this.oauthClientRepository = oauthClientRepository;
@@ -62,7 +62,8 @@ public class OauthLoginManager {
      */
     public String getCode(OauthParameter parameter){
         // 获取客户端信息
-        OauthClient oauthClient = oauthClientRepository.getById(parameter.getClientId());
+        OauthClient oauthClient = oauthClientRepository.selectByClientIdAndGrantType(parameter.getClientId()
+                ,parameter.getGrantType());
         BusinessException.isNull(oauthClient,INVALID_CLIENT_ID_ERROR);
         // 校验秘钥
         oauthClient.checkClientSecret(parameter.getClientSecret());

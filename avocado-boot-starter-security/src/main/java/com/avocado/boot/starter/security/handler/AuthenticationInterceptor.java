@@ -5,12 +5,12 @@ import com.avocado.boot.starter.security.bean.Authentication;
 import com.avocado.boot.starter.security.context.SecurityContextHolder;
 import com.avocado.boot.starter.security.service.ISecurityService;
 import com.avocado.boot.starter.security.service.TokenStorage;
-import com.avocado.boot.starter.security.support.InterceptorSupport;
+import com.avocado.boot.starter.core.support.InterceptorSupport;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +19,7 @@ import java.util.List;
  *
  * @author ：qiaoliang
  */
+@Order(100)
 public class AuthenticationInterceptor implements InterceptorSupport {
 
     private final ISecurityService securityService;
@@ -59,17 +60,20 @@ public class AuthenticationInterceptor implements InterceptorSupport {
 
     @Override
     public List<String> getPathPatterns() {
+        List<String> patterns = Arrays.asList("", "/**");
         if(CollUtil.isNotEmpty(pathPatterns)){
-            return pathPatterns;
+            patterns.addAll(pathPatterns);
         }
-        return new ArrayList<>(Arrays.asList("","/**"));
+        return patterns;
     }
 
     @Override
     public List<String> excludePathPatterns() {
+        List<String> patterns = Arrays.asList("/oauth/**",
+                "/doc.html","/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
         if(CollUtil.isNotEmpty(excludePathPatterns)){
-            return excludePathPatterns;
+            patterns.addAll(excludePathPatterns);
         }
-        return new ArrayList<>();
+        return patterns;
     }
 }

@@ -6,19 +6,14 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.5</version>
+        <version>0.0.6</version>
     </parent>
     <name>avocado-boot-starter-security</name>
     <artifactId>avocado-boot-starter-security</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <description>Avocado Boot Security</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
-        <!-- spring boot web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <!-- spring boot aop -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,10 +34,6 @@
         <dependency>
             <groupId>com.github.gitqiao</groupId>
             <artifactId>avocado-boot-starter-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.gitqiao</groupId>
-            <artifactId>avocado-boot-starter-validation</artifactId>
         </dependency>
     </dependencies>
     <organization>

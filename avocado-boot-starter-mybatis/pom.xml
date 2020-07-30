@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.4</version>
+        <version>0.0.6</version>
     </parent>
     <name>avocado-boot-starter-mybatis</name>
     <artifactId>avocado-boot-starter-mybatis</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <description>Avocado Boot Mybatis-Plus</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>

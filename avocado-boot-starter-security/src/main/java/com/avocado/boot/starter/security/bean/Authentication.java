@@ -1,6 +1,7 @@
 package com.avocado.boot.starter.security.bean;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -18,6 +19,7 @@ public class Authentication implements java.io.Serializable {
 
     public Authentication(Long id) {
         this.id = id;
+        this.authorities = new ArrayList<>();
     }
 
     public Authentication(Long id, Collection<String> authorities) {

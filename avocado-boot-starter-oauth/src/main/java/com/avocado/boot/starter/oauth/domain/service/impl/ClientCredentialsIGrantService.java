@@ -18,10 +18,10 @@ import static com.avocado.boot.starter.oauth.infrastructure.enums.OauthErrorType
 @Component
 public class ClientCredentialsIGrantService implements IGrantService {
 
-    private final IGrantCodeService IGrantCodeService;
+    private final IGrantCodeService grantCodeService;
 
-    public ClientCredentialsIGrantService(IGrantCodeService IGrantCodeService) {
-        this.IGrantCodeService = IGrantCodeService;
+    public ClientCredentialsIGrantService(IGrantCodeService grantCodeService) {
+        this.grantCodeService = grantCodeService;
     }
 
     @Override
@@ -29,13 +29,13 @@ public class ClientCredentialsIGrantService implements IGrantService {
         //  校验授权码是否为空
         BusinessException.isNull(parameter.getCode(),NON_EMPTY_CODE_ERROR);
         //  获取授权码详细信息
-        GrantCode grantCode = IGrantCodeService.selectByCode(parameter.getCode());
+        GrantCode grantCode = grantCodeService.selectByCode(parameter.getCode());
         //  校验客户端Id
         OauthClient client = grantCode.getClient();
         client.checkClientId(parameter.getClientId());
         //  校验客户端秘钥
         client.checkClientSecret(parameter.getClientSecret());
-        return new Authentication(grantCode.getUserId());
+        return new Authentication(client.getId());
     }
     @Override
     public GrantType getGrantType() {

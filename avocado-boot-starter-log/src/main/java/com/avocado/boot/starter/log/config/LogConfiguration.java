@@ -2,6 +2,7 @@ package com.avocado.boot.starter.log.config;
 
 import com.avocado.boot.starter.log.annotation.LogConfigurerSupport;
 import com.avocado.boot.starter.log.aop.LogAspect;
+import com.avocado.boot.starter.log.event.SystemLogEventPublisher;
 import com.avocado.boot.starter.log.factory.LogConfigurationAdapter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -23,8 +24,16 @@ public class LogConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public LogConfigurerSupport toLogConfigurerSupport(){
-        return new LogConfigurerSupport();
+    public LogConfigurerSupport toLogConfigurerSupport(SystemLogEventPublisher systemLogEventPublisher){
+        LogConfigurerSupport logConfigurerSupport = new LogConfigurerSupport();
+        logConfigurerSupport.systemLogEventPublisher(systemLogEventPublisher);
+        return logConfigurerSupport;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public SystemLogEventPublisher toSystemLogEventPublisher(){
+        return new SystemLogEventPublisher();
     }
 
     @Bean

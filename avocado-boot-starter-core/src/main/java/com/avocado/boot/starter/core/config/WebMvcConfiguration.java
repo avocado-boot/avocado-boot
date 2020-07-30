@@ -1,6 +1,6 @@
-package com.avocado.boot.starter.security.config;
+package com.avocado.boot.starter.core.config;
 
-import com.avocado.boot.starter.security.support.InterceptorSupport;
+import com.avocado.boot.starter.core.support.InterceptorSupport;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -12,9 +12,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.Collection;
 
 /**
- * @author WFT
- * @date 2020/7/2
- * description:Web配置
+ * Web配置
+ *
+ * @author ：qiaoliang
  */
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer, ApplicationContextAware {

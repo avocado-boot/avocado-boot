@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
         "com.avocado.boot.starter.oauth.domain",
         "com.avocado.boot.starter.oauth.application",
         "com.avocado.boot.starter.oauth.controller",
+        "com.avocado.boot.starter.oauth.infrastructure.repository",
 })
 public class OauthConfig {
 

@@ -1,4 +1,4 @@
-package com.avocado.boot.starter.security.support;
+package com.avocado.boot.starter.core.support;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 

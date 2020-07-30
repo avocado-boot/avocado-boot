@@ -3,7 +3,7 @@ package com.avocado.boot.starter.oauth.domain.service.impl;
 import com.avocado.boot.starter.core.exception.BusinessException;
 import com.avocado.boot.starter.oauth.application.dto.OauthParameter;
 import com.avocado.boot.starter.oauth.domain.OauthClient;
-import com.avocado.boot.starter.oauth.domain.repository.OauthClientRepository;
+import com.avocado.boot.starter.oauth.domain.repository.IOauthClientRepository;
 import com.avocado.boot.starter.oauth.infrastructure.enums.GrantType;
 import com.avocado.boot.starter.oauth.domain.service.IGrantService;
 import com.avocado.boot.starter.security.bean.Authentication;
@@ -17,16 +17,17 @@ import static com.avocado.boot.starter.oauth.infrastructure.enums.OauthErrorType
 @Component
 public class AuthorizationCodeIGrantService implements IGrantService {
 
-    private final OauthClientRepository oauthClientRepository;
+    private final IOauthClientRepository oauthClientRepository;
 
-    public AuthorizationCodeIGrantService(OauthClientRepository oauthClientRepository) {
+    public AuthorizationCodeIGrantService(IOauthClientRepository oauthClientRepository) {
         this.oauthClientRepository = oauthClientRepository;
     }
 
     @Override
     public Authentication grant(OauthParameter parameter) {
         // 获取客户端信息
-        OauthClient oauthClient = oauthClientRepository.getById(parameter.getClientId());
+        OauthClient oauthClient = oauthClientRepository.selectByClientIdAndGrantType(parameter.getClientId()
+                ,parameter.getGrantType());
         BusinessException.isNull(oauthClient,INVALID_CLIENT_ID_ERROR);
         // 校验秘钥
         oauthClient.checkClientSecret(parameter.getClientSecret());

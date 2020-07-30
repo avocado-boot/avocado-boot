@@ -4,15 +4,25 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.4</version>
+        <version>0.0.6</version>
     </parent>
     <name>avocado-boot-starter-core</name>
     <artifactId>avocado-boot-starter-core</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <packaging>jar</packaging>
     <description>Avocado Boot Core package</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
+        <!--spring-boot-starter-web-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--spring-boot-starter-validation-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <!-- spring boot actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

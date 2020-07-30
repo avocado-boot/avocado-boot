@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.avocado.boot.starter.core.config.CoreConfig,\
+com.avocado.boot.starter.core.config.WebMvcConfiguration
