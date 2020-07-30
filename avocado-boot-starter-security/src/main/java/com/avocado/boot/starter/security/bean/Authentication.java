@@ -16,6 +16,15 @@ public class Authentication implements java.io.Serializable {
     /**权限列表**/
     private Collection<String> authorities;
 
+    public Authentication(Long id) {
+        this.id = id;
+    }
+
+    public Authentication(Long id, Collection<String> authorities) {
+        this.id = id;
+        this.authorities = authorities;
+    }
+
     public Long getId() {
         return id;
     }

@@ -8,41 +8,26 @@
         <groupId>com.github.gitqiao</groupId>
         <version>0.0.5</version>
     </parent>
-    <name>avocado-boot-starter-security</name>
-    <artifactId>avocado-boot-starter-security</artifactId>
-    <version>0.0.5</version>
-    <description>Avocado Boot Security</description>
+    <name>avocado-boot-starter-oauth</name>
+    <artifactId>avocado-boot-starter-oauth</artifactId>
+    <version>0.0.1</version>
+    <description>Avocado Boot Oauth</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
-        <!-- spring boot web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- spring boot aop -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <!-- spring boot配置文件提示 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!-- jwt -->
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-        </dependency>
-        <!-- 核心依赖 -->
+        <!-- avocado boot security -->
         <dependency>
             <groupId>com.github.gitqiao</groupId>
-            <artifactId>avocado-boot-starter-core</artifactId>
+            <artifactId>avocado-boot-starter-security</artifactId>
         </dependency>
+        <!-- avocado boot redis -->
         <dependency>
             <groupId>com.github.gitqiao</groupId>
-            <artifactId>avocado-boot-starter-validation</artifactId>
+            <artifactId>avocado-boot-starter-redis</artifactId>
+        </dependency>
+        <!-- avocado boot mybatis -->
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-mybatis</artifactId>
         </dependency>
     </dependencies>
     <organization>
@@ -66,4 +51,5 @@
         <system>GitHub</system>
         <url>https://github.com/gitQiao/avocado-boot/issues</url>
     </issueManagement>
+
 </project>

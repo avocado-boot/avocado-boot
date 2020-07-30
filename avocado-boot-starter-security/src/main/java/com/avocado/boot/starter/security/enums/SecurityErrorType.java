@@ -7,15 +7,15 @@ import com.avocado.boot.starter.core.enums.ErrorType;
  * @author ：qiaoliang
  */
 public enum  SecurityErrorType implements ErrorType {
-    ACCESS_DENIED_EXCEPTION(HttpStatus.HTTP_UNAUTHORIZED,"无权访问."),
-    NO_ACCESS_ERROR(HttpStatus.HTTP_UNAUTHORIZED,"token失效或证书错误."),
+    ACCESS_DENIED_EXCEPTION("无权访问."),
+    NO_ACCESS_ERROR("token失效或证书错误."),
     ;
 
     private int code;
     private String message;
 
-    SecurityErrorType(int code, String message) {
-        this.code = code;
+    SecurityErrorType(String message) {
+        this.code = HttpStatus.HTTP_UNAUTHORIZED;
         this.message = message;
     }
 

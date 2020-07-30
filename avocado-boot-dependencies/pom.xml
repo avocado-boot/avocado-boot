@@ -68,7 +68,9 @@
         <!-- Avocado Boot Swagger -->
         <avocado-boot-swagger.version>0.0.4</avocado-boot-swagger.version>
         <!-- Avocado Boot Security -->
-        <avocado-boot-security.version>0.0.4</avocado-boot-security.version>
+        <avocado-boot-security.version>0.0.5</avocado-boot-security.version>
+        <!-- Avocado Boot Oauth -->
+        <avocado-boot-oauth.version>0.0.1</avocado-boot-oauth.version>
         <!-- swagger2 -->
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <!-- swagger2-ui -->
@@ -121,6 +123,12 @@
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-security</artifactId>
                 <version>${avocado-boot-security.version}</version>
+            </dependency>
+            <!-- Avocado Boot Oauth -->
+            <dependency>
+                <groupId>com.github.gitqiao</groupId>
+                <artifactId>avocado-boot-starter-oauth</artifactId>
+                <version>${avocado-boot-oauth.version}</version>
             </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>

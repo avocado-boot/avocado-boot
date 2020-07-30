@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.avocado.boot.starter.oauth.infrastructure.config.OauthConfig
