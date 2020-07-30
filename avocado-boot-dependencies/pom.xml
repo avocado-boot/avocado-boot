@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.gitqiao</groupId>
     <artifactId>avocado-boot-dependencies</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <name>avocado-boot-dependencies</name>
     <packaging>pom</packaging>
     <url>https://github.com/gitQiao/avocado-boot</url>
