@@ -17,14 +17,27 @@ public class Authentication implements java.io.Serializable {
     /**权限列表**/
     private Collection<String> authorities;
 
+    /**有效期时间**/
+    private Long expiresIn;
+
+    public Authentication() {
+    }
+
+    public Authentication(Long id, Collection<String> authorities, Long expiresIn) {
+        this.id = id;
+        this.authorities = authorities;
+        this.expiresIn = expiresIn;
+    }
+
     public Authentication(Long id) {
         this.id = id;
         this.authorities = new ArrayList<>();
     }
 
-    public Authentication(Long id, Collection<String> authorities) {
+    public Authentication(Long id, Long expiresIn) {
         this.id = id;
-        this.authorities = authorities;
+        this.expiresIn = expiresIn;
+        this.authorities = new ArrayList<>();
     }
 
     public Long getId() {
@@ -41,5 +54,13 @@ public class Authentication implements java.io.Serializable {
 
     public void setAuthorities(Collection<String> authorities) {
         this.authorities = authorities;
+    }
+
+    public Long getExpiresIn() {
+        return expiresIn;
+    }
+
+    public void setExpiresIn(Long expiresIn) {
+        this.expiresIn = expiresIn;
     }
 }

@@ -7,6 +7,7 @@ import com.avocado.boot.starter.core.enums.ErrorType;
  * @author ：qiaoliang
  */
 public enum  OauthErrorType implements ErrorType {
+    APPNAME_ERROR("当前应用已注册."),
     PASSWORD_ERROR("用户密码错误."),
     NON_CREDENTIALS_EXPIRED_ERROR("凭证已过期."),
     NON_LOCKED_ERROR("账号已锁定."),

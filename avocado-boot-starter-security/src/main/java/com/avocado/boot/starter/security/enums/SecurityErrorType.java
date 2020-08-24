@@ -8,7 +8,7 @@ import com.avocado.boot.starter.core.enums.ErrorType;
  */
 public enum  SecurityErrorType implements ErrorType {
     ACCESS_DENIED_EXCEPTION("无权访问."),
-    NO_ACCESS_ERROR("token失效或证书错误."),
+    NO_ACCESS_ERROR("无效的token."),
     ;
 
     private int code;

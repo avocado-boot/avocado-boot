@@ -25,12 +25,9 @@ public class AuthorizeAspectHandler {
         Authentication authentication = SecurityContextHolder.getAuthentication();
         //  权限校验
         if (preAuthorize.value().length > 0){
-            boolean result = authentication.getAuthorities().stream()
+            BusinessException.isFalse(authentication.getAuthorities().stream()
                     .filter(StringUtils::hasText)
-                    .anyMatch(x -> PatternMatchUtils.simpleMatch(preAuthorize.value(), x));
-            if (!result) {
-                throw new BusinessException(ACCESS_DENIED_EXCEPTION);
-            }
+                    .anyMatch(x -> PatternMatchUtils.simpleMatch(preAuthorize.value(), x)),ACCESS_DENIED_EXCEPTION);
         }
     }
 }

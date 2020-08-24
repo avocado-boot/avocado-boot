@@ -17,7 +17,7 @@ public interface ISecurityService {
      * @param token : 访问令牌
      * @return com.avocado.boot.starter.security.bean.Authentication
      */
-    Authentication getAuthentication(String token) throws JsonProcessingException;
+    Authentication getAuthentication(String token);
 
     /**
      * 生成访问令牌
@@ -26,6 +26,14 @@ public interface ISecurityService {
      * @param authentication : 账号的认证信息
      * @return com.avocado.boot.starter.security.bean.AccessToken
      */
-    AccessToken generateToken(Authentication authentication) throws JsonProcessingException;
+    AccessToken generateToken(Authentication authentication);
+
+    /**
+     * 移除访问令牌
+     * @param token java.lang.String
+     */
+    default void removeToken(String token){
+
+    }
 
 }

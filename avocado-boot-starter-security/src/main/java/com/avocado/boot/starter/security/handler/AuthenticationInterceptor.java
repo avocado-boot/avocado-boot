@@ -1,31 +1,32 @@
 package com.avocado.boot.starter.security.handler;
 
-import cn.hutool.core.collection.CollUtil;
+import com.avocado.boot.starter.core.exception.BusinessException;
 import com.avocado.boot.starter.security.bean.Authentication;
 import com.avocado.boot.starter.security.context.SecurityContextHolder;
 import com.avocado.boot.starter.security.service.ISecurityService;
 import com.avocado.boot.starter.security.service.TokenStorage;
 import com.avocado.boot.starter.core.support.InterceptorSupport;
-import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 认证拦截器
  *
  * @author ：qiaoliang
  */
-@Order(100)
 public class AuthenticationInterceptor implements InterceptorSupport {
 
     private final ISecurityService securityService;
     private final TokenStorage tokenStorage;
-    private List<String> pathPatterns;
-    private List<String> excludePathPatterns;
+    private final List<String> pathPatterns = Collections.singletonList("/**");
+    private final List<String> exclude = new ArrayList<>();
 
     public AuthenticationInterceptor(ISecurityService securityService,
                                      TokenStorage tokenStorage) {
@@ -35,12 +36,21 @@ public class AuthenticationInterceptor implements InterceptorSupport {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //  获取访问令牌
-        String accessToken = this.tokenStorage.getAccessToken(request);
-        //  获取当前用户认证信息
-        Authentication authentication = securityService.getAuthentication(accessToken);
-        //  将用户认证信息存放在当前线程中
-        SecurityContextHolder.set(authentication);
+        try{
+            //  获取访问令牌
+            String accessToken = this.tokenStorage.getAccessToken(request);
+            //  获取当前用户认证信息
+            Authentication authentication = securityService.getAuthentication(accessToken);
+            //  将用户认证信息存放在当前线程中
+            SecurityContextHolder.set(authentication);
+        }catch (BusinessException e){
+            response.setStatus(e.getErrorType().getCode());
+            response.setContentType("application/json;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().print(e.getMessage());
+            response.getWriter().flush();
+            return false;
+        }
         return true;
     }
 
@@ -50,30 +60,31 @@ public class AuthenticationInterceptor implements InterceptorSupport {
         SecurityContextHolder.clear();
     }
 
-    public void pathPatterns(List<String> pathPatterns){
-        this.pathPatterns = pathPatterns;
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+
     }
 
-    public void excludePathPatterns(List<String> excludePathPatterns){
-        this.excludePathPatterns = excludePathPatterns;
+    public void addExcludePathPatterns(String... excludePathPatterns){
+        if(Objects.nonNull(excludePathPatterns)){
+            this.exclude.addAll(Arrays.asList(excludePathPatterns));
+        }
     }
 
     @Override
     public List<String> getPathPatterns() {
-        List<String> patterns = Arrays.asList("", "/**");
-        if(CollUtil.isNotEmpty(pathPatterns)){
-            patterns.addAll(pathPatterns);
-        }
-        return patterns;
+        return pathPatterns;
     }
 
     @Override
     public List<String> excludePathPatterns() {
-        List<String> patterns = Arrays.asList("/oauth/**",
-                "/doc.html","/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
-        if(CollUtil.isNotEmpty(excludePathPatterns)){
-            patterns.addAll(excludePathPatterns);
-        }
-        return patterns;
+        exclude.addAll(Arrays.asList("/doc.html",
+                "/swagger-resources/**",
+                "/swagger/**",
+                "/v2/api-docs/**",
+                "/webjars/**",
+                "/oauth/token"));
+        return exclude;
     }
+
 }

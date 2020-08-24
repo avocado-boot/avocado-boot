@@ -1,13 +1,13 @@
 package com.avocado.boot.starter.core.bus.listeners;
 
-import com.avocado.boot.starter.core.bus.event.AbstractDomainEvent;
+import com.avocado.boot.starter.core.bus.event.DomainEvent;
 
 /**
  * 触发接口限制
  *
  * @author ：qiaoliang
  */
-public interface DomainEventPublisher<T extends AbstractDomainEvent> {
+public interface DomainEventPublisher<T extends DomainEvent> {
 
     String identify();
 

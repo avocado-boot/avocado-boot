@@ -9,11 +9,11 @@ public class AccessToken implements java.io.Serializable {
     private String token;
 
     /**有效期时间**/
-    private long expired;
+    private long expiresIn;
 
-    public AccessToken(String token, long expired) {
+    public AccessToken(String token, long expiresIn) {
         this.token = token;
-        this.expired = expired;
+        this.expiresIn = (expiresIn-1);
     }
 
     public String getToken() {
@@ -24,11 +24,11 @@ public class AccessToken implements java.io.Serializable {
         this.token = token;
     }
 
-    public long getExpired() {
-        return expired;
+    public long getExpiresIn() {
+        return expiresIn;
     }
 
-    public void setExpired(long expired) {
-        this.expired = expired;
+    public void setExpiresIn(long expiresIn) {
+        this.expiresIn = expiresIn;
     }
 }

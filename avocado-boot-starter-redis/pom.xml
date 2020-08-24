@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.4</version>
+        <version>0.1.0</version>
     </parent>
     <name>avocado-boot-starter-redis</name>
     <artifactId>avocado-boot-starter-redis</artifactId>
-    <version>0.0.4</version>
+    <version>0.1.0</version>
     <description>Avocado Boot Redis</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
@@ -23,6 +23,10 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-core</artifactId>
         </dependency>
     </dependencies>
     <organization>

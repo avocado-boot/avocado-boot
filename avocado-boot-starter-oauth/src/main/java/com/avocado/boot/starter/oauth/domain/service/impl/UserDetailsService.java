@@ -9,9 +9,7 @@ import static com.avocado.boot.starter.oauth.infrastructure.enums.OauthErrorType
 
 /**
  * @author ：qiaoliang
- * @date ：2020-07-30
  */
-@Component
 public class UserDetailsService implements IUserDetailsService {
 
     @Override

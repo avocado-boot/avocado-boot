@@ -1,15 +1,13 @@
 package com.avocado.boot.starter.log.event;
 
-import com.avocado.boot.starter.core.bus.event.AbstractDomainEvent;
-
-import java.util.Date;
+import com.avocado.boot.starter.core.bus.event.DomainEvent;
 
 /**
  * 日志事件模型
  *
  * @author ：qiaoliang
  */
-public class SystemLogEvent extends AbstractDomainEvent {
+public class SystemLogEvent extends DomainEvent {
     /**请求用户**/
     private String currUserId;
     /**请求参数**/

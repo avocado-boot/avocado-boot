@@ -18,7 +18,7 @@ public class OauthClientRepository extends BaseServiceImpl<OauthClientMapper,Oau
     @Override
     public OauthClient selectByClientIdAndGrantType(String clientId, GrantType grantType) {
         LambdaQueryWrapper<OauthClient> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(OauthClient::getId,clientId);
+        queryWrapper.eq(OauthClient::getClientId,clientId);
         queryWrapper.eq(OauthClient::getGrantType,grantType);
         return this.getOne(queryWrapper);
     }

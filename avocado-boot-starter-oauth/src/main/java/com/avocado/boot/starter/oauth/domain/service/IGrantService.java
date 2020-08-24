@@ -1,6 +1,6 @@
 package com.avocado.boot.starter.oauth.domain.service;
 
-import com.avocado.boot.starter.oauth.application.dto.OauthParameter;
+import com.avocado.boot.starter.oauth.application.command.cmd.OauthCommand;
 import com.avocado.boot.starter.oauth.infrastructure.enums.GrantType;
 import com.avocado.boot.starter.security.bean.Authentication;
 
@@ -18,7 +18,7 @@ public interface IGrantService {
      * @param parameter : 请求模型
      * @return com.avocado.boot.starter.security.bean.Authentication
      */
-    Authentication grant(OauthParameter parameter);
+    Authentication grant(OauthCommand parameter);
 
     /**
      * 获取认证方式

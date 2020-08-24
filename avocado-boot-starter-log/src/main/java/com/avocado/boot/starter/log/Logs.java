@@ -1,9 +1,8 @@
 package com.avocado.boot.starter.log;
 
-import com.avocado.boot.starter.core.utils.DateUtils;
-import com.avocado.boot.starter.core.utils.JsonUtils;
-import com.avocado.boot.starter.core.utils.StringUtils;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.avocado.boot.starter.core.util.DateUtils;
+import com.avocado.boot.starter.core.util.JsonUtils;
+import com.avocado.boot.starter.core.util.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
@@ -12,12 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+import static com.avocado.boot.starter.core.SystemConst.CURRENT_USER_ID_HEADER;
+
 /**
  * @author ：qiaoliang
  */
 public class Logs {
-
-    public static final String CURRENT_USER_ID_HEADER = "X-CurrUserId";
 
     private String currUserId = "-";
     /**返回参数**/
@@ -71,30 +70,16 @@ public class Logs {
         //参数值
         Object[] objects=joinPoint.getArgs();
         for (int i = 0; i < names.length; i++) {
-            String param = objects[i].toString();
-            if(param.contains("(")&&param.contains(")")){
-                param = param.substring(param.indexOf("(")+1, param.indexOf(")"));
-                String[] strs = param.split(",");
-                for(String s:strs){
-                    String[] ms = s.split("=");
-                    map.put(ms[0].trim(), ms[1]);
-                }
-            }else {
-                map.put(names[i], param);
-            }
+            map.put(names[i], objects[i]);
         }
-        try {
-            this.setInputParam(JsonUtils.toJson(map));
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+        this.setInputParam(JsonUtils.toJson(map));
     }
 
 
     public void doAfterReturning(Object ret){
         this.setEndTime(DateUtils.formatCurrentDateTime());
         this.setEndTimeMillis(System.currentTimeMillis());
-        this.setOutParam(ret);
+        this.setOutParam(JsonUtils.toJson(ret));
     }
 
 

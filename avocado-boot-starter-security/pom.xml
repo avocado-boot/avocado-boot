@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.6</version>
+        <version>0.1.0</version>
     </parent>
     <name>avocado-boot-starter-security</name>
     <artifactId>avocado-boot-starter-security</artifactId>
-    <version>0.0.6</version>
+    <version>0.1.0</version>
     <description>Avocado Boot Security</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
@@ -24,6 +24,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <!-- avocado boot redis -->
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-redis</artifactId>
         </dependency>
         <!-- jwt -->
         <dependency>

@@ -1,7 +1,6 @@
 package com.avocado.boot.starter.core.bus.listeners;
 
-import com.avocado.boot.starter.core.bus.event.AbstractDomainEvent;
-import com.avocado.boot.starter.core.bus.listeners.DomainEventPublisher;
+import com.avocado.boot.starter.core.bus.event.DomainEvent;
 import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
@@ -28,12 +27,12 @@ public abstract class AbstractGuavaDomainEventPublisher implements DomainEventPu
     }
 
     @Override
-    public void publish(AbstractDomainEvent event) {
+    public void publish(DomainEvent event) {
         syncBus.post(event);
     }
 
     @Override
-    public void asyncPublish(AbstractDomainEvent event) {
+    public void asyncPublish(DomainEvent event) {
         asyncBus.post(event);
     }
 

@@ -1,6 +1,11 @@
 package com.avocado.boot.starter.oauth.domain;
 
+import com.avocado.boot.starter.core.exception.BusinessException;
+import org.springframework.util.DigestUtils;
+
 import java.util.Collection;
+
+import static com.avocado.boot.starter.oauth.infrastructure.enums.OauthErrorType.PASSWORD_ERROR;
 
 /**
  * @author ：qiaoliang
@@ -16,16 +21,16 @@ public class UserDetails {
     private Collection<String> authorities;
 
     /**用户是否未过期**/
-    private boolean accountNonExpired = false;
+    private boolean accountNonExpired = true;
 
     /**用户是否未锁定**/
-    private boolean accountNonLocked = false;
+    private boolean accountNonLocked = true;
 
     /**凭证是否未过期**/
-    private boolean credentialsNonExpired = false;
+    private boolean credentialsNonExpired = true;
 
     /**是否启用**/
-    private boolean enabled = false;
+    private boolean enabled = true;
 
     public UserDetails(Long userId, String password, Collection<String> authorities) {
         this.userId = userId;
@@ -98,4 +103,16 @@ public class UserDetails {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+    /**
+     * 校验密码
+     *
+     * @author ：qiaoliang
+     * @param password : 密码
+     */
+    public void checkPwd(String password){
+        BusinessException.isFalse(this.getPassword()
+                .equals(DigestUtils.md5DigestAsHex(password.getBytes())),PASSWORD_ERROR);
+    }
+
 }

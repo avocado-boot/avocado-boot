@@ -1,6 +1,6 @@
 package com.avocado.boot.starter.mybatis.service.impl;
 
-import com.avocado.boot.starter.mybatis.bean.BaseEntity;
+import com.avocado.boot.starter.mybatis.basic.BaseEntity;
 import com.avocado.boot.starter.mybatis.service.BaseService;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

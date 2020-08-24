@@ -6,11 +6,11 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.0.6</version>
+        <version>0.1.0</version>
     </parent>
     <name>avocado-boot-starter-oauth</name>
     <artifactId>avocado-boot-starter-oauth</artifactId>
-    <version>0.0.2</version>
+    <version>0.1.0</version>
     <description>Avocado Boot Oauth</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
@@ -19,15 +19,20 @@
             <groupId>com.github.gitqiao</groupId>
             <artifactId>avocado-boot-starter-security</artifactId>
         </dependency>
-        <!-- avocado boot redis -->
-        <dependency>
-            <groupId>com.github.gitqiao</groupId>
-            <artifactId>avocado-boot-starter-redis</artifactId>
-        </dependency>
         <!-- avocado boot mybatis -->
         <dependency>
             <groupId>com.github.gitqiao</groupId>
             <artifactId>avocado-boot-starter-mybatis</artifactId>
+        </dependency>
+        <!-- avocado boot log -->
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-log</artifactId>
+        </dependency>
+        <!-- avocado boot swagger -->
+        <dependency>
+            <groupId>com.github.gitqiao</groupId>
+            <artifactId>avocado-boot-starter-swagger</artifactId>
         </dependency>
     </dependencies>
     <organization>

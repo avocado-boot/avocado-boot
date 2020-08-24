@@ -1,56 +1,53 @@
 package com.avocado.boot.starter.oauth.controller;
 
 import cn.hutool.http.HttpStatus;
-import com.avocado.boot.starter.oauth.application.OauthLoginManager;
-import com.avocado.boot.starter.oauth.application.dto.OauthParameter;
+import com.avocado.boot.starter.log.invalid.ControllerLog;
+import com.avocado.boot.starter.oauth.application.command.OauthClientCmd;
+import com.avocado.boot.starter.oauth.application.command.cmd.OauthCommand;
 import com.avocado.boot.starter.security.annotation.PreAuthorize;
 import com.avocado.boot.starter.security.bean.AccessToken;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+
 /**
  * @author ：qiaoliang
  */
+@Api(tags = "Oauth认证模块")
+@Validated
+@RequestMapping("/oauth")
 @RestController
 public class OauthController {
 
-    private final OauthLoginManager oauthLoginManager;
+    private final OauthClientCmd oauthClientCmd;
 
-    public OauthController(OauthLoginManager oauthLoginManager) {
-        this.oauthLoginManager = oauthLoginManager;
+    public OauthController(OauthClientCmd oauthClientCmd) {
+        this.oauthClientCmd = oauthClientCmd;
     }
 
-    /**
-     * 获取访问令牌
-     *
-     * @author ：qiaoliang
-     * @param parameter : 请求参数
-     * @return org.springframework.http.ResponseEntity<com.avocado.boot.starter.security.bean.AccessToken>
-     */
-    @PostMapping(value = "/oauth/token")
-    public ResponseEntity<AccessToken> getToken(@Valid @RequestBody OauthParameter parameter)
-            throws JsonProcessingException {
+    @ApiOperation(value = "获取访问令牌")
+    @ControllerLog(discription = "获取访问令牌")
+    @PostMapping(value = "/token")
+    public ResponseEntity<AccessToken> getToken(@Valid @RequestBody OauthCommand parameter) {
         return ResponseEntity.status(HttpStatus.HTTP_CREATED)
-                .body(oauthLoginManager.getAccessToken(parameter));
+                .body(oauthClientCmd.getAccessToken(parameter));
     }
 
-    /**
-     * 获取code
-     *
-     * @author ：qiaoliang
-     * @param parameter : 请求参数
-     * @return org.springframework.http.ResponseEntity<java.lang.String>
-     */
+    @ApiOperation(value = "获取code")
     @PreAuthorize
+    @ControllerLog(discription = "获取code")
     @PostMapping(value = "/code")
-    public ResponseEntity<String> applyCode(@Valid @RequestBody OauthParameter parameter){
+    public ResponseEntity<String> applyCode(@Valid @RequestBody OauthCommand parameter){
         return ResponseEntity.status(HttpStatus.HTTP_CREATED)
-                .body(oauthLoginManager.getCode(parameter));
+                .body(oauthClientCmd.getCode(parameter));
     }
 
 }

@@ -11,9 +11,9 @@
       "description": "凭证信息."
     },
     {
-      "name": "security.time",
-      "type": "java.lang.Long",
-      "defaultValue": "1000 * 60 * 60 * 24",
-      "description": "访问令牌有效期为1天."
+      "name": "security.exclude",
+      "type": "java.lang.String[]",
+      "defaultValue": "\"/doc.html\",\"/swagger-resources/**\", \"/webjars/**\", \"/v2/**\", \"/swagger-ui.html/**\",\"/oauth/**\"",
+      "description": "不拦截地址配置 多个请用，号隔开."
     }
   ] }

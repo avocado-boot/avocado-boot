@@ -1,6 +1,6 @@
 package com.avocado.boot.starter.core.invalid;
 
-import com.avocado.boot.starter.core.utils.StringUtils;
+import com.avocado.boot.starter.core.util.StringUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

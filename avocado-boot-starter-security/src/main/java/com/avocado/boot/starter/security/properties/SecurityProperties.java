@@ -8,11 +8,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "security")
 public class SecurityProperties {
     /**Jwt Token 颁发者**/
-    private String issuer;
+    private String issuer = "avocado";
     /**凭证信息**/
-    private String cert;
-    /**访问令牌有效期为1天**/
-    private long time = 1000 * 60 * 60 * 24;
+    private String cert = "ix4bhR&$aS6^K29J8ZuhePoWi$H$qkQURPT&uGte4fJES^7UOKaTUHP0mwsj";
+    /**不拦截地址配置 多个请用，号隔开**/
+    private String[] exclude = new String[]{};
 
     public String getIssuer() {
         return issuer;
@@ -30,11 +30,11 @@ public class SecurityProperties {
         this.cert = cert;
     }
 
-    public long getTime() {
-        return time;
+    public String[] getExclude() {
+        return exclude;
     }
 
-    public void setTime(long time) {
-        this.time = time;
+    public void setExclude(String[] exclude) {
+        this.exclude = exclude;
     }
 }

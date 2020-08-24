@@ -1,6 +1,6 @@
 package com.avocado.boot.starter.mybatis.service;
 
-import com.avocado.boot.starter.mybatis.bean.BaseEntity;
+import com.avocado.boot.starter.mybatis.basic.BaseEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
