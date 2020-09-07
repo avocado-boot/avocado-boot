@@ -1,5 +1,6 @@
 package com.avocado.boot.starter.mybatis.config;
 
+import com.avocado.boot.starter.core.support.IOperatorService;
 import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -35,8 +36,8 @@ public class MyBatisPlusConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean
-    public ModelMetaObjectHandler modelMetaObjectHandler(){
-        return new ModelMetaObjectHandler();
+    public ModelMetaObjectHandler modelMetaObjectHandler(IOperatorService operatorService){
+        return new ModelMetaObjectHandler(operatorService);
     }
 
     @Bean

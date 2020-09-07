@@ -1,7 +1,7 @@
 package com.avocado.boot.starter.oauth.controller;
 
 import cn.hutool.http.HttpStatus;
-import com.avocado.boot.starter.log.invalid.ControllerLog;
+import com.avocado.boot.starter.log.invalid.Log;
 import com.avocado.boot.starter.oauth.application.command.OauthClientCmd;
 import com.avocado.boot.starter.oauth.application.command.cmd.OauthCommand;
 import com.avocado.boot.starter.security.annotation.PreAuthorize;
@@ -34,7 +34,7 @@ public class OauthController {
     }
 
     @ApiOperation(value = "获取访问令牌")
-    @ControllerLog(discription = "获取访问令牌")
+    @Log(discription = "获取访问令牌")
     @PostMapping(value = "/token")
     public ResponseEntity<AccessToken> getToken(@Valid @RequestBody OauthCommand parameter) {
         return ResponseEntity.status(HttpStatus.HTTP_CREATED)
@@ -43,7 +43,7 @@ public class OauthController {
 
     @ApiOperation(value = "获取code")
     @PreAuthorize
-    @ControllerLog(discription = "获取code")
+    @Log(discription = "获取code")
     @PostMapping(value = "/code")
     public ResponseEntity<String> applyCode(@Valid @RequestBody OauthCommand parameter){
         return ResponseEntity.status(HttpStatus.HTTP_CREATED)

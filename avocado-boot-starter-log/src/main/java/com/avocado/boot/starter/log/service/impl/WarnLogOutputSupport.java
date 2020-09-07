@@ -23,12 +23,14 @@ public class WarnLogOutputSupport extends AbstractLogOutputSupport implements Lo
 
     @Override
     public void before(Logs logs) {
-        log.warn("请求开始时间：{}", logs.getStartTime());
         log.warn("请求Url : {}", logs.getUrl());
         log.warn("请求方式 : {}", logs.getMethod());
         log.warn("请求方法 : {}", logs.getMethodName());
+        log.warn("请求功能 : {}", logs.getBusinessType());
         log.warn("请求用户 : {}", logs.getCurrUserId());
+        log.warn("用户类别 : {}", logs.getOperatorType());
         log.warn("请求参数 : {}", logs.getInputParam());
+        log.warn("请求开始时间：{}", logs.getStartTime());
     }
 
     @Override

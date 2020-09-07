@@ -19,6 +19,10 @@ import static com.avocado.boot.starter.core.SystemConst.CURRENT_USER_ID_HEADER;
 public class Logs {
 
     private String currUserId = "-";
+    /**功能**/
+    private String businessType;
+    /**操作人类别**/
+    private String operatorType;
     /**返回参数**/
     private Object outParam;
     /**请求参数**/
@@ -54,10 +58,6 @@ public class Logs {
      */
     public void beforeCalling(HttpServletRequest request, JoinPoint joinPoint){
         if (Objects.nonNull(request)) {
-            String headerUser = request.getHeader(CURRENT_USER_ID_HEADER);
-            if(StringUtils.isNotBlank(headerUser)){
-                this.setCurrUserId(headerUser);
-            }
             this.setUrl(request.getRequestURL().toString());
             this.setMethod(request.getMethod());
         }
@@ -90,6 +90,23 @@ public class Logs {
 
     public String getCurrUserId() {
         return currUserId;
+    }
+
+
+    public String getBusinessType() {
+        return businessType;
+    }
+
+    public void setBusinessType(String businessType) {
+        this.businessType = businessType;
+    }
+
+    public String getOperatorType() {
+        return operatorType;
+    }
+
+    public void setOperatorType(String operatorType) {
+        this.operatorType = operatorType;
     }
 
     public void setCurrUserId(String currUserId) {

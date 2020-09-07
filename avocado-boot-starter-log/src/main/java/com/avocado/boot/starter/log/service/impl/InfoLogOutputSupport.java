@@ -23,12 +23,14 @@ public class InfoLogOutputSupport extends AbstractLogOutputSupport implements Lo
 
     @Override
     public void before(Logs logs) {
-        log.info("请求开始时间：{}", logs.getStartTime());
         log.info("请求Url : {}", logs.getUrl());
         log.info("请求方式 : {}", logs.getMethod());
         log.info("请求方法 : {}", logs.getMethodName());
+        log.info("请求功能 : {}", logs.getBusinessType());
         log.info("请求用户 : {}", logs.getCurrUserId());
+        log.info("用户类别 : {}", logs.getOperatorType());
         log.info("请求参数 : {}", logs.getInputParam());
+        log.info("请求开始时间：{}", logs.getStartTime());
     }
 
     @Override

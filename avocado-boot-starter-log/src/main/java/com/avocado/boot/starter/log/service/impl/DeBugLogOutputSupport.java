@@ -23,12 +23,14 @@ public class DeBugLogOutputSupport extends AbstractLogOutputSupport implements L
 
     @Override
     public void before(Logs logs) {
-        log.debug("请求开始时间：{}", logs.getStartTime());
         log.debug("请求Url : {}", logs.getUrl());
         log.debug("请求方式 : {}", logs.getMethod());
         log.debug("请求方法 : {}", logs.getMethodName());
+        log.debug("请求功能 : {}", logs.getBusinessType());
         log.debug("请求用户 : {}", logs.getCurrUserId());
+        log.debug("用户类别 : {}", logs.getOperatorType());
         log.debug("请求参数 : {}", logs.getInputParam());
+        log.debug("请求开始时间：{}", logs.getStartTime());
     }
 
     @Override

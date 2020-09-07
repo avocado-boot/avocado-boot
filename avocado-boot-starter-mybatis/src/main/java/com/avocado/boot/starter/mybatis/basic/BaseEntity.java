@@ -1,27 +1,34 @@
 package com.avocado.boot.starter.mybatis.basic;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+
 import java.util.Date;
 
 /**
  * @author ：qiaoliang
  */
-public class BaseEntity implements java.io.Serializable{
-    private Long id;
-    private Long createBy;
+public class BaseEntity<T,E> extends Entity<T>{
+
+    @TableField(fill = FieldFill.INSERT)
+    private E createBy;
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
-    private Long updateBy;
+    @TableField(fill = FieldFill.UPDATE)
+    private E updateBy;
+    @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
     private String remark;
 
     public BaseEntity() {
     }
 
-    public BaseEntity(Long id) {
-        this.id = id;
+    public BaseEntity(T id) {
+        super(id);
     }
 
-    public BaseEntity(Long id, Long createBy, Date createTime, Long updateBy, Date updateTime, String remark) {
-        this.id = id;
+    public BaseEntity(T id, E createBy, Date createTime, E updateBy, Date updateTime, String remark) {
+        super(id);
         this.createBy = createBy;
         this.createTime = createTime;
         this.updateBy = updateBy;
@@ -29,19 +36,11 @@ public class BaseEntity implements java.io.Serializable{
         this.remark = remark;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getCreateBy() {
+    public E getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(Long createBy) {
+    public void setCreateBy(E createBy) {
         this.createBy = createBy;
     }
 
@@ -53,11 +52,11 @@ public class BaseEntity implements java.io.Serializable{
         this.createTime = createTime;
     }
 
-    public Long getUpdateBy() {
+    public E getUpdateBy() {
         return updateBy;
     }
 
-    public void setUpdateBy(Long updateBy) {
+    public void setUpdateBy(E updateBy) {
         this.updateBy = updateBy;
     }
 

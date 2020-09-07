@@ -12,15 +12,12 @@ public class PageBean<T> extends PageInfo{
     private final int totalPage;
     /** 总行数*/
     private final int rows;
-    /** 数据库起始下标*/
-    private final int first;
 
     public PageBean(PageInfo pageInfo, Integer rows) {
         super(pageInfo.getPageSize(), pageInfo.getPageNumber(), pageInfo.getOrders());
         this.rows = rows;
         //页数      根据传入的 总行数 以及 每页显示的行数 求出总页数
         this.totalPage=rows % this.getPageSize()==0 ? rows/this.getPageSize() : (rows/this.getPageSize()+1);
-        this.first = (this.getPageNumber() - 1) * this.getPageSize() + 1;
         //如果传入的页码为空 或者小于0  就默认给 1
         if (this.getPageNumber() < 0){
             this.setPageNumber(1);
@@ -44,10 +41,6 @@ public class PageBean<T> extends PageInfo{
 
     public int getRows() {
         return rows;
-    }
-
-    public int getFirst(){
-        return first;
     }
 
 }

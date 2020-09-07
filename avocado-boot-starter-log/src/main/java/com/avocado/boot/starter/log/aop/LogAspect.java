@@ -1,11 +1,12 @@
 package com.avocado.boot.starter.log.aop;
 
 import com.avocado.boot.starter.core.exception.BusinessException;
+import com.avocado.boot.starter.core.support.IOperatorService;
 import com.avocado.boot.starter.log.Logs;
 import com.avocado.boot.starter.log.annotation.LogConfigurerSupport;
 import com.avocado.boot.starter.log.enums.LogLevelType;
 import com.avocado.boot.starter.log.factory.LogConfigurationAdapter;
-import com.avocado.boot.starter.log.invalid.ControllerLog;
+import com.avocado.boot.starter.log.invalid.Log;
 import com.avocado.boot.starter.log.properties.LogProperties;
 import com.avocado.boot.starter.log.service.LogOutput;
 import org.aspectj.lang.JoinPoint;
@@ -37,10 +38,13 @@ public class LogAspect {
     private final LogConfigurerSupport logConfigurerSupport;
     private final LogOutput logOutput;
     private Logs logs = null;
+    private final IOperatorService operatorService;
 
     public LogAspect(LogConfigurerSupport logConfigurerSupport,
                      LogConfigurationAdapter logConfigurationAdapter,
-                     LogProperties logProperties) {
+                     LogProperties logProperties,
+                     IOperatorService operatorService) {
+        this.operatorService = operatorService;
         this.logOutput = logConfigurationAdapter.getLogConfiguration
                 (LogLevelType.valueOf(logProperties.getLevel()));
         this.logConfigurerSupport = logConfigurerSupport;
@@ -49,7 +53,7 @@ public class LogAspect {
     /**
      * Controller层切点 注解拦截
      */
-    @Pointcut("@annotation(com.avocado.boot.starter.log.invalid.ControllerLog)")
+    @Pointcut("@annotation(com.avocado.boot.starter.log.invalid.Log)")
     public void controllerAspect(){
     }
 
@@ -67,7 +71,11 @@ public class LogAspect {
             request = attributes.getRequest();
         }
         logs = new Logs();
-        logs.setMethodName(getAnnotation(joinPoint).discription());
+        logs.setCurrUserId((String) operatorService.operator());
+        Log annotation = getAnnotation(joinPoint);
+        logs.setMethodName(annotation.discription());
+        logs.setBusinessType(annotation.businessType());
+        logs.setOperatorType(annotation.operatorType());
         logs.beforeCalling(request,joinPoint);
         logOutput.before(logs);
         logConfigurerSupport.before(logs);
@@ -114,12 +122,12 @@ public class LogAspect {
      * @param joinPoint : 请求
      * @return com.avocado.boot.starter.log.invalid.ControllerLog
      */
-    private ControllerLog getAnnotation(JoinPoint joinPoint){
+    private Log getAnnotation(JoinPoint joinPoint){
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         //得到目标方法
         Method method = signature.getMethod();
         //得到方法之上的注解
-        return method.getAnnotation(ControllerLog.class);
+        return method.getAnnotation(Log.class);
     }
 
 

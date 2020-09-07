@@ -14,7 +14,7 @@ import static com.avocado.boot.starter.oauth.infrastructure.enums.OauthErrorType
  * @author ：qiaoliang
  */
 @TableName(autoResultMap = true)
-public class OauthClient extends BaseEntity {
+public class OauthClient extends BaseEntity<Long,Long> {
 
     /**加密盐**/
     private String salt;

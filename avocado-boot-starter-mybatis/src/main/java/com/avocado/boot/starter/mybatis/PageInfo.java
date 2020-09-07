@@ -7,35 +7,35 @@ import java.util.List;
  */
 public class PageInfo {
     /** 每页显示的行数*/
-    private int pageSize = 5;
+    private Integer pageSize = 5;
 
     /** 当前页码数（默认给1）*/
-    private int pageNumber = 1;
+    private Integer pageNumber = 1;
 
     private List<String> orders;
 
     private PageInfo() {
     }
 
-    public PageInfo(int pageSize, int pageNumber, List<String> orders) {
+    public PageInfo(Integer pageSize, Integer pageNumber, List<String> orders) {
         this.pageSize = pageSize;
         this.pageNumber = pageNumber;
         this.orders = orders;
     }
 
-    public int getPageSize() {
+    public Integer getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(Integer pageSize) {
         this.pageSize = pageSize;
     }
 
-    public int getPageNumber() {
+    public Integer getPageNumber() {
         return pageNumber;
     }
 
-    public void setPageNumber(int pageNumber) {
+    public void setPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
     }
 
@@ -46,4 +46,5 @@ public class PageInfo {
     public void setOrders(List<String> orders) {
         this.orders = orders;
     }
+
 }
