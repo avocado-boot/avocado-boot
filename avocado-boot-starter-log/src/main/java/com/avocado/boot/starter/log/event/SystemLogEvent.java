@@ -34,12 +34,14 @@ public class SystemLogEvent extends DomainEvent {
      * @return java.lang.String
      * @date 2020-09-08 14:01
      */
-    protected String onlyParameterBody(){
-        if(StrUtil.isNotBlank(this.getInputParam())){
+    public String onlyParameterBody(){
+        try{
             String substring = this.getInputParam().substring(this.getInputParam().indexOf(":") + 1);
             return substring.substring(0, substring.length() -1);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     public SystemLogEvent() {
