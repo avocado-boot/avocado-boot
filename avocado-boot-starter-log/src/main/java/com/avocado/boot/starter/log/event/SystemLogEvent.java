@@ -1,5 +1,6 @@
 package com.avocado.boot.starter.log.event;
 
+import cn.hutool.core.util.StrUtil;
 import com.avocado.boot.starter.core.bus.event.DomainEvent;
 
 /**
@@ -20,17 +21,39 @@ public class SystemLogEvent extends DomainEvent {
     private String method;
     /**请求Url**/
     private String url;
+    /**功能**/
+    private String businessType;
+    /**操作人类别**/
+    private String operatorType;
+
+    /**
+     * 获取body内容
+     *
+     * @author ：qiaoliang
+
+     * @return java.lang.String
+     * @date 2020-09-08 14:01
+     */
+    protected String onlyParameterBody(){
+        if(StrUtil.isNotBlank(this.getInputParam())){
+            String substring = this.getInputParam().substring(this.getInputParam().indexOf(":") + 1);
+            return substring.substring(0, substring.length() -1);
+        }
+        return null;
+    }
 
     public SystemLogEvent() {
     }
 
-    public SystemLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url) {
+    public SystemLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url, String businessType, String operatorType) {
         this.currUserId = currUserId;
         this.inputParam = inputParam;
         this.outParam = outParam;
         this.methodName = methodName;
         this.method = method;
         this.url = url;
+        this.businessType = businessType;
+        this.operatorType = operatorType;
     }
 
     public String getCurrUserId() {
@@ -79,5 +102,21 @@ public class SystemLogEvent extends DomainEvent {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getBusinessType() {
+        return businessType;
+    }
+
+    public void setBusinessType(String businessType) {
+        this.businessType = businessType;
+    }
+
+    public String getOperatorType() {
+        return operatorType;
+    }
+
+    public void setOperatorType(String operatorType) {
+        this.operatorType = operatorType;
     }
 }

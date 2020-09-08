@@ -22,8 +22,8 @@ public class SystemSuccessLogEvent extends SystemLogEvent {
     public SystemSuccessLogEvent() {
     }
 
-    public SystemSuccessLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url, Long consumingTime, Date startTime, Date endTime, long startTimeMillis, long endTimeMillis) {
-        super(currUserId, inputParam, outParam, methodName, method, url);
+    public SystemSuccessLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url, String businessType, String operatorType, Long consumingTime, Date startTime, Date endTime, long startTimeMillis, long endTimeMillis) {
+        super(currUserId, inputParam, outParam, methodName, method, url, businessType, operatorType);
         this.consumingTime = consumingTime;
         this.startTime = startTime;
         this.endTime = endTime;

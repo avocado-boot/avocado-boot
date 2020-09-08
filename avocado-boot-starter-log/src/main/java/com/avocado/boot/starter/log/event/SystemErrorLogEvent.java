@@ -16,8 +16,8 @@ public class SystemErrorLogEvent extends SystemLogEvent {
     public SystemErrorLogEvent() {
     }
 
-    public SystemErrorLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url, Date errorTime, String errorCountent) {
-        super(currUserId, inputParam, outParam, methodName, method, url);
+    public SystemErrorLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url, String businessType, String operatorType, Date errorTime, String errorCountent) {
+        super(currUserId, inputParam, outParam, methodName, method, url, businessType, operatorType);
         this.errorTime = errorTime;
         this.errorCountent = errorCountent;
     }
