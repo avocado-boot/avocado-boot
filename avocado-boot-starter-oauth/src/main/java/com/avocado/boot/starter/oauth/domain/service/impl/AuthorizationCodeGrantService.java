@@ -5,8 +5,8 @@ import com.avocado.boot.starter.oauth.application.command.cmd.OauthCommand;
 import com.avocado.boot.starter.oauth.domain.GrantCode;
 import com.avocado.boot.starter.oauth.domain.OauthClient;
 import com.avocado.boot.starter.oauth.domain.service.IGrantCodeService;
-import com.avocado.boot.starter.oauth.infrastructure.enums.GrantType;
 import com.avocado.boot.starter.oauth.domain.service.IGrantService;
+import com.avocado.boot.starter.oauth.infrastructure.enums.GrantType;
 import com.avocado.boot.starter.security.bean.Authentication;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,5 @@
 package com.avocado.boot.starter.log.event;
 
-import cn.hutool.core.util.StrUtil;
 import com.avocado.boot.starter.core.bus.event.DomainEvent;
 
 /**

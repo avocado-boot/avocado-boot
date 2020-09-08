@@ -2,7 +2,6 @@ package com.avocado.boot.starter.log;
 
 import com.avocado.boot.starter.core.util.DateUtils;
 import com.avocado.boot.starter.core.util.JsonUtils;
-import com.avocado.boot.starter.core.util.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 
@@ -10,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-
-import static com.avocado.boot.starter.core.SystemConst.CURRENT_USER_ID_HEADER;
 
 /**
  * @author ：qiaoliang

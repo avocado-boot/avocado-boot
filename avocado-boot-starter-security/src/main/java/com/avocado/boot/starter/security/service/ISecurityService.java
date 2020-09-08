@@ -2,7 +2,6 @@ package com.avocado.boot.starter.security.service;
 
 import com.avocado.boot.starter.security.bean.AccessToken;
 import com.avocado.boot.starter.security.bean.Authentication;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 /**
  *

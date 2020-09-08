@@ -1,11 +1,11 @@
 package com.avocado.boot.starter.security.handler;
 
 import com.avocado.boot.starter.core.exception.BusinessException;
+import com.avocado.boot.starter.core.support.InterceptorSupport;
 import com.avocado.boot.starter.security.bean.Authentication;
 import com.avocado.boot.starter.security.context.SecurityContextHolder;
 import com.avocado.boot.starter.security.service.ISecurityService;
 import com.avocado.boot.starter.security.service.TokenStorage;
-import com.avocado.boot.starter.core.support.InterceptorSupport;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;

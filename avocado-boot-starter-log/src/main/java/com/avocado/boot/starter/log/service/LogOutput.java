@@ -1,7 +1,7 @@
 package com.avocado.boot.starter.log.service;
 
-import com.avocado.boot.starter.log.Logs;
 import com.avocado.boot.starter.log.LogConfigurer;
+import com.avocado.boot.starter.log.Logs;
 import com.avocado.boot.starter.log.enums.LogLevelType;
 
 /**

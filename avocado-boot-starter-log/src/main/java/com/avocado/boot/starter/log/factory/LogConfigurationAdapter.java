@@ -1,11 +1,10 @@
 package com.avocado.boot.starter.log.factory;
 
-import com.avocado.boot.starter.log.service.LogOutput;
 import com.avocado.boot.starter.log.enums.LogLevelType;
+import com.avocado.boot.starter.log.service.LogOutput;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
