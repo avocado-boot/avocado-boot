@@ -8,24 +8,26 @@
         <groupId>com.github.gitqiao</groupId>
         <version>0.1.1</version>
     </parent>
-    <name>avocado-boot-starter-redis</name>
-    <artifactId>avocado-boot-starter-redis</artifactId>
-    <description>Avocado Boot Redis</description>
+    <name>avocado-boot-starter-resubmit</name>
+    <artifactId>avocado-boot-starter-resubmit</artifactId>
+    <description>Avocado Boot System log dependency</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
-        <!-- spring boot redis -->
+        <!-- spring boot aop -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        <!-- jackson -->
+        <!-- spring boot配置文件提示 -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
+        <!-- avocado redis  -->
         <dependency>
             <groupId>com.github.gitqiao</groupId>
-            <artifactId>avocado-boot-starter-core</artifactId>
+            <artifactId>avocado-boot-starter-redis</artifactId>
         </dependency>
     </dependencies>
     <organization>

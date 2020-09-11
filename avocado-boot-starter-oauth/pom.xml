@@ -6,11 +6,10 @@
     <parent>
         <artifactId>avocado-boot-starter-parent</artifactId>
         <groupId>com.github.gitqiao</groupId>
-        <version>0.1.0</version>
+        <version>0.1.1</version>
     </parent>
     <name>avocado-boot-starter-oauth</name>
     <artifactId>avocado-boot-starter-oauth</artifactId>
-    <version>0.1.0</version>
     <description>Avocado Boot Oauth</description>
     <url>https://github.com/gitQiao/avocado-boot</url>
     <dependencies>
