@@ -5,6 +5,25 @@ package com.avocado.boot.starter.core.support;
  * @date ：2020-08-27
  */
 public interface IOperatorService {
-    /** 获取操作者 **/
-     Object operator();
+
+    /***
+     *  获取操作者
+     *
+     * @author ：qiaoliang
+     * @return java.lang.String
+     */
+     default String operator(){
+         return "-";
+     }
+
+    /***
+     *  获取操作者类型
+     *
+     * @author ：qiaoliang
+     * @return java.lang.String
+     */
+    default String operatorType(){
+        return "-";
+    }
+
 }

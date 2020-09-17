@@ -26,7 +26,8 @@ public class InfoLogOutputSupport extends AbstractLogOutputSupport implements Lo
         log.info("请求Url : {}", logs.getUrl());
         log.info("请求方式 : {}", logs.getMethod());
         log.info("请求方法 : {}", logs.getMethodName());
-        log.info("请求功能 : {}", logs.getBusinessType());
+        log.info("功能模块 : {}", logs.getBusinessType());
+        log.info("方法描述 : {}", logs.getDiscription());
         log.info("请求用户 : {}", logs.getCurrUserId());
         log.info("用户类别 : {}", logs.getOperatorType());
         log.info("请求参数 : {}", logs.getInputParam());

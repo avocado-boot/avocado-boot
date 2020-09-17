@@ -16,11 +16,13 @@ public class SystemLogEvent extends DomainEvent {
     private String outParam;
     /**请求方法**/
     private String methodName;
+    /**方法描述**/
+    private String discription;
     /**请求方式**/
     private String method;
     /**请求Url**/
     private String url;
-    /**功能**/
+    /**功能模块**/
     private String businessType;
     /**操作人类别**/
     private String operatorType;
@@ -46,11 +48,13 @@ public class SystemLogEvent extends DomainEvent {
     public SystemLogEvent() {
     }
 
-    public SystemLogEvent(String currUserId, String inputParam, String outParam, String methodName, String method, String url, String businessType, String operatorType) {
+    public SystemLogEvent(String currUserId, String inputParam, String outParam, String methodName, String discription,
+                          String method, String url, String businessType, String operatorType) {
         this.currUserId = currUserId;
         this.inputParam = inputParam;
         this.outParam = outParam;
         this.methodName = methodName;
+        this.discription = discription;
         this.method = method;
         this.url = url;
         this.businessType = businessType;
@@ -95,6 +99,14 @@ public class SystemLogEvent extends DomainEvent {
 
     public void setMethod(String method) {
         this.method = method;
+    }
+
+    public String getDiscription() {
+        return discription;
+    }
+
+    public void setDiscription(String discription) {
+        this.discription = discription;
     }
 
     public String getUrl() {

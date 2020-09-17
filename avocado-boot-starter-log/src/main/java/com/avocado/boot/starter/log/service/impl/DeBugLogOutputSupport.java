@@ -26,7 +26,8 @@ public class DeBugLogOutputSupport extends AbstractLogOutputSupport implements L
         log.debug("请求Url : {}", logs.getUrl());
         log.debug("请求方式 : {}", logs.getMethod());
         log.debug("请求方法 : {}", logs.getMethodName());
-        log.debug("请求功能 : {}", logs.getBusinessType());
+        log.debug("功能模块 : {}", logs.getBusinessType());
+        log.debug("方法描述 : {}", logs.getDiscription());
         log.debug("请求用户 : {}", logs.getCurrUserId());
         log.debug("用户类别 : {}", logs.getOperatorType());
         log.debug("请求参数 : {}", logs.getInputParam());

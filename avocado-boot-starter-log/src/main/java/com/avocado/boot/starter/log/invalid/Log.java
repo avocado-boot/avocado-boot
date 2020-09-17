@@ -16,11 +16,8 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface Log {
 
-  /**功能**/
+  /**功能模块**/
   String businessType() default "-";
-
-  /**操作人类别**/
-  String operatorType() default "-";
 
   /**方法描述**/
   String discription() default "-";

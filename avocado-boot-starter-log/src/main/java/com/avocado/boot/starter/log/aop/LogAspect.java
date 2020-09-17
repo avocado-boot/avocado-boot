@@ -71,11 +71,12 @@ public class LogAspect {
             request = attributes.getRequest();
         }
         logs = new Logs();
-        logs.setCurrUserId((String) operatorService.operator());
-        Log annotation = getAnnotation(joinPoint);
-        logs.setMethodName(annotation.discription());
+        logs.setCurrUserId(operatorService.operator());
+        Method method = getMethod(joinPoint);
+        Log annotation = method.getAnnotation(Log.class);
+        logs.setMethodName(method.getName());
         logs.setBusinessType(annotation.businessType());
-        logs.setOperatorType(annotation.operatorType());
+        logs.setOperatorType(operatorService.operatorType());
         logs.beforeCalling(request,joinPoint);
         logOutput.before(logs);
         logConfigurerSupport.before(logs);
@@ -122,12 +123,10 @@ public class LogAspect {
      * @param joinPoint : 请求
      * @return com.avocado.boot.starter.log.invalid.ControllerLog
      */
-    private Log getAnnotation(JoinPoint joinPoint){
+    private Method getMethod(JoinPoint joinPoint){
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         //得到目标方法
-        Method method = signature.getMethod();
-        //得到方法之上的注解
-        return method.getAnnotation(Log.class);
+        return signature.getMethod();
     }
 
 

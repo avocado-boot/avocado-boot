@@ -26,7 +26,8 @@ public class WarnLogOutputSupport extends AbstractLogOutputSupport implements Lo
         log.warn("请求Url : {}", logs.getUrl());
         log.warn("请求方式 : {}", logs.getMethod());
         log.warn("请求方法 : {}", logs.getMethodName());
-        log.warn("请求功能 : {}", logs.getBusinessType());
+        log.warn("功能模块 : {}", logs.getBusinessType());
+        log.warn("方法描述 : {}", logs.getDiscription());
         log.warn("请求用户 : {}", logs.getCurrUserId());
         log.warn("用户类别 : {}", logs.getOperatorType());
         log.warn("请求参数 : {}", logs.getInputParam());

@@ -26,6 +26,8 @@ public class Logs {
     private String inputParam;
     /**请求方法**/
     private String methodName;
+    /**方法描述**/
+    private String discription;
     /**请求方式**/
     private String method;
     /**请求Url**/
@@ -132,6 +134,14 @@ public class Logs {
 
     public void setMethodName(String methodName) {
         this.methodName = methodName;
+    }
+
+    public String getDiscription() {
+        return discription;
+    }
+
+    public void setDiscription(String discription) {
+        this.discription = discription;
     }
 
     public String getMethod() {
