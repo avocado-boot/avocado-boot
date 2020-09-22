@@ -11,7 +11,7 @@
     <groupId>com.github.gitqiao</groupId>
     <name>avocado-boot-starter-parent</name>
     <artifactId>avocado-boot-starter-parent</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <packaging>pom</packaging>
     <description>Avocado Boot Parent</description>
     <url>https://github.com/gitQiao/avocado-boot</url>

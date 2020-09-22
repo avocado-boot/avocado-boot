@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.gitqiao</groupId>
     <artifactId>avocado-boot-dependencies</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <name>avocado-boot-dependencies</name>
     <packaging>pom</packaging>
     <url>https://github.com/gitQiao/avocado-boot</url>
@@ -43,6 +43,22 @@
     <properties>
         <!-- Java版本 -->
         <java.version>1.8</java.version>
+        <!-- Avocado Boot Core -->
+        <avocado-boot-core.version>0.1.2</avocado-boot-core.version>
+        <!-- Avocado Boot Log -->
+        <avocado-boot-log.version>0.1.3</avocado-boot-log.version>
+        <!-- Avocado Boot Redis -->
+        <avocado-boot-redis.version>0.1.2</avocado-boot-redis.version>
+        <!-- Avocado Boot Mybatis -->
+        <avocado-boot-mybatis.version>0.1.2</avocado-boot-mybatis.version>
+        <!-- Avocado Boot Swagger -->
+        <avocado-boot-swagger.version>0.1.2</avocado-boot-swagger.version>
+        <!-- Avocado Boot Security -->
+        <avocado-boot-security.version>0.1.2</avocado-boot-security.version>
+        <!-- Avocado Boot Oauth -->
+        <avocado-boot-oauth.version>0.1.2</avocado-boot-oauth.version>
+        <!-- Avocado Boot Resubmit -->
+        <avocado-boot-resubmit.version>0.1.2</avocado-boot-resubmit.version>
         <!-- Hutool -->
         <cn.hutool.version>5.4.0</cn.hutool.version>
         <!-- mybatis-plus -->
@@ -68,49 +84,49 @@
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-core</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-core.version}</version>
             </dependency>
             <!-- Avocado Boot Log -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-log</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-log.version}</version>
             </dependency>
             <!-- Avocado Boot Redis -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-redis</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-redis.version}</version>
             </dependency>
             <!-- Avocado Boot Swagger2 -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-swagger</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-swagger.version}</version>
             </dependency>
             <!-- Avocado Boot Mybatis -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-mybatis</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-mybatis.version}</version>
             </dependency>
             <!-- Avocado Boot Security -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-security</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-security.version}</version>
             </dependency>
             <!-- Avocado Boot Oauth -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-oauth</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-oauth.version}</version>
             </dependency>
             <!-- Avocado Boot Resubmit -->
             <dependency>
                 <groupId>com.github.gitqiao</groupId>
                 <artifactId>avocado-boot-starter-resubmit</artifactId>
-                <version>${version}</version>
+                <version>${avocado-boot-resubmit.version}</version>
             </dependency>
             <!--Hutool是一个Java工具包  url:https://www.hutool.club/docs/#/-->
             <dependency>

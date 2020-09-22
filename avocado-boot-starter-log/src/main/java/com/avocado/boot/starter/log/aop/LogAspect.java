@@ -76,6 +76,7 @@ public class LogAspect {
         Log annotation = method.getAnnotation(Log.class);
         logs.setMethodName(method.getName());
         logs.setBusinessType(annotation.businessType());
+        logs.setDiscription(annotation.discription());
         logs.setOperatorType(operatorService.operatorType());
         logs.beforeCalling(request,joinPoint);
         logOutput.before(logs);
